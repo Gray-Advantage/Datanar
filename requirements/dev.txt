@@ -1,3 +1,4 @@
 -r prod.txt
 -r test.txt
-celery-types>=0.23.0
+celery-types==0.26.0
+djangorestframework-stubs==3.18.1

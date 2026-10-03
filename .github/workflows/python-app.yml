@@ -2,9 +2,9 @@ name: Datanar
 
 on:
   push:
-    branches: [ "main", "dev", "artem", "sergey", "vladimir", "for_merge" ]
+    branches: [ "main", "dev", "artem", "sergey" ]
   pull_request:
-    branches: [ "main", "dev", "artem", "sergey", "vladimir", "for_merge" ]
+    branches: [ "main", "dev", "artem", "sergey", "vladimir" ]
 
 permissions:
   contents: read
