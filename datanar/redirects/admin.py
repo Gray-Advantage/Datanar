@@ -36,19 +36,12 @@ MIN_DOMAIN_PARTS = 2
 @admin.register(redirects_models.Redirect)
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
-        "view_long_link",
         redirects_models.Redirect.short_link.field.name,
         redirects_models.Redirect.created_at.field.name,
         redirects_models.Redirect.is_active.field.name,
         redirects_models.Redirect.create_method.field.name,
         redirects_models.Redirect.user.field.name,
     )
-
-    @admin.display(description=_("long_link"))
-    def view_long_link(self, obj: redirects_models.Redirect) -> str:
-        if obj.long_link and len(obj.long_link) > LONG_LINK_PREVIEW_LENGTH:
-            return f"{obj.long_link[:LONG_LINK_PREVIEW_LENGTH]}..."
-        return obj.long_link
 
     @admin.action(description=_("block_selected_redirects"))
     def block(
