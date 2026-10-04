@@ -19,7 +19,7 @@
   {% include "includes/paginator.html" %}
   <div class="list-group gap-2 mx-auto mb-3">
     {% for link in links %}
-      {% include "includes/link_card.html" with link=link %}
+      {% include "includes/link_card.html" with link=link.short_link %}
     {% endfor %}
   </div>
   {% include "qr_codes/QR_modal_preview.html" %}
