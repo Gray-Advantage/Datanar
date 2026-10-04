@@ -30,16 +30,15 @@ class AllLinksView(
     paginate_by = 6
 
     def get_queryset(self) -> "QuerySet":
-        redirects = (
-            Redirect.objects.all()
-            .only(Redirect.short_link.field.name)
-            .order_by("-created_at")
+        return Redirect.objects.only(
+            Redirect.short_link.field.name,
+        ).order_by(
+            f"-{Redirect.created_at.field.name}",
         )
-        return [redirect.short_link for redirect in redirects]
 
     def delete(self, request: HttpRequest) -> HttpResponse:
         Redirect.objects.filter(
-            short_link=request.POST.get("short_link"),
+            short_link=request.POST.get(Redirect.short_link.field.name),
         ).delete()
         return HttpResponseRedirect(request.get_full_path())
 
