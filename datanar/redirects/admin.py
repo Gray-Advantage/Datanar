@@ -38,6 +38,7 @@ class ItemAdmin(admin.ModelAdmin):
     list_display = (
         redirects_models.Redirect.short_link.field.name,
         redirects_models.Redirect.created_at.field.name,
+        redirects_models.Redirect.updated_at.field.name,
         redirects_models.Redirect.is_active.field.name,
         redirects_models.Redirect.create_method.field.name,
         redirects_models.Redirect.user.field.name,
