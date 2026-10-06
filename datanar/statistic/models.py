@@ -7,6 +7,8 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+from core.models import TimeStampedModel
+
 if TYPE_CHECKING:
     from django.db.models import QuerySet
 
@@ -50,11 +52,7 @@ class ClickManager(models.Manager):
         )
 
 
-class Click(models.Model):
-    clicked_at = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name=_("redirect_time"),
-    )
+class Click(TimeStampedModel):
     redirect = models.ForeignKey(
         "redirects.Redirect",
         on_delete=models.CASCADE,
@@ -86,5 +84,9 @@ class Click(models.Model):
 
     objects = ClickManager()
 
+    class Meta:
+        verbose_name = _("click")
+        verbose_name_plural = _("clicks")
+
     def __str__(self) -> str:
-        return str(self.clicked_at)
+        return str(self.created_at)

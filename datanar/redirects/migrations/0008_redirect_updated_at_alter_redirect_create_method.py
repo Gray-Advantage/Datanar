@@ -15,8 +15,17 @@ class Migration(migrations.Migration):
             name="updated_at",
             field=models.DateTimeField(
                 auto_now=True,
-                help_text="When this object was last updated.",
-                verbose_name="update_time",
+                help_text="When the object was last updated.",
+                verbose_name="Update time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="redirect",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                help_text="When the object was created.",
+                verbose_name="Creation time",
             ),
         ),
         migrations.AlterField(
