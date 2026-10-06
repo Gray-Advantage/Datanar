@@ -18,7 +18,7 @@ class ClickManager(models.Manager):
         return (
             self.get_queryset()
             .filter(redirect__short_link=short_link)
-            .prefetch_related("redirect")
+            .prefetch_related(Click.redirect.field.name)
             .count()
         )
 
@@ -26,8 +26,14 @@ class ClickManager(models.Manager):
         return (
             self.get_queryset()
             .filter(redirect__short_link=short_link)
-            .prefetch_related("redirect")
-            .only("browser", "city", "country", "redirect_id", "os")
+            .prefetch_related(Click.redirect.field.name)
+            .only(
+                Click.browser.field.name,
+                Click.city.field.name,
+                Click.country.field.name,
+                f"{Click.redirect.field.name}_id",
+                Click.os.field.name,
+            )
         )
 
     def for_short_link_by_last_year(
