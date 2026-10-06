@@ -1,33 +1,41 @@
-submit_button = document.getElementById("submit_button");
+const submitButton = document.getElementById("submit_button");
+const avatar = document.getElementById("avatar");
+const idAvatar = document.getElementById("id_avatar");
+const idUsername = document.getElementById("id_username");
 
-if (!document.getElementById("submit_button").classList.contains("d-none")) {
-  submit_button.classList.add("d-none");
+const avatarClear = document.getElementById("avatar-clear_id");
+const deleteAvatar = document.getElementById("delete_avatar");
+
+if (!submitButton) {
+  throw new Error("'#submit_button' element was not found in the DOM.");
 }
 
-document.getElementById("avatar").addEventListener("click", function () {
-  document.getElementById("id_avatar").click();
-});
+const isSubmitButtonVisible = () => !submitButton.classList.contains("d-none");
+const showSubmitButton = () => submitButton.classList.remove("d-none");
+const hideSubmitButton = () => submitButton.classList.add("d-none");
 
-document.getElementById("id_avatar").addEventListener("change", function () {
+
+if (isSubmitButtonVisible()) {
+  hideSubmitButton();
+}
+
+idUsername?.addEventListener("input", showSubmitButton);
+avatarClear?.addEventListener("change", showSubmitButton);
+
+avatar?.addEventListener("click", () => idAvatar.click());
+
+idAvatar?.addEventListener("change", function () {
   if (this.files && this.files.length > 0) {
-    let reader = new FileReader();
-    reader.onload = function (e) {
-      document.getElementById("avatar").src = e.target.result;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      avatar.src = e.target.result;
     }
     reader.readAsDataURL(this.files[0]);
-    submit_button.classList.remove("d-none");
+    showSubmitButton();
   }
 });
 
-document.getElementById("avatar-clear_id")?.addEventListener("change", () => {
-  submit_button.classList.remove("d-none");
-});
-
-document.getElementById("id_username").addEventListener("input", () => {
-  submit_button.classList.remove("d-none")
-});
-
-document.getElementById("delete_avatar")?.addEventListener("click", () => {
-  document.getElementById("avatar-clear_id").setAttribute("checked", "true");
-  submit_button.click();
+deleteAvatar?.addEventListener("click", () => {
+  avatarClear.checked = true;
+  submitButton.click();
 });
