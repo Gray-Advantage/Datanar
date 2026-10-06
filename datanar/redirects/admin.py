@@ -9,39 +9,38 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from dashboard.models import BlockedDomain
-from redirects import models as redirects_models
-from statistic import models as statistic_models
+from redirects.models import Redirect
+from statistic.models import Click
 
 if TYPE_CHECKING:
     from django.db.models import QuerySet
 
 
 class ClickInline(admin.TabularInline):
-    model = statistic_models.Click
+    model = Click
     extra = 0
 
     readonly_fields = (
-        statistic_models.Click.id.field.name,
-        statistic_models.Click.country.field.name,
-        statistic_models.Click.city.field.name,
-        statistic_models.Click.os.field.name,
-        statistic_models.Click.browser.field.name,
+        Click.id.field.name,
+        Click.country.field.name,
+        Click.city.field.name,
+        Click.os.field.name,
+        Click.browser.field.name,
     )
 
 
-LONG_LINK_PREVIEW_LENGTH = 75
 MIN_DOMAIN_PARTS = 2
 
 
-@admin.register(redirects_models.Redirect)
+@admin.register(Redirect)
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
-        redirects_models.Redirect.short_link.field.name,
-        redirects_models.Redirect.created_at.field.name,
-        redirects_models.Redirect.updated_at.field.name,
-        redirects_models.Redirect.is_active.field.name,
-        redirects_models.Redirect.create_method.field.name,
-        redirects_models.Redirect.user.field.name,
+        Redirect.short_link.field.name,
+        Redirect.created_at.field.name,
+        Redirect.updated_at.field.name,
+        Redirect.is_active.field.name,
+        Redirect.create_method.field.name,
+        Redirect.user.field.name,
     )
 
     @admin.action(description=_("block_selected_redirects"))
@@ -52,7 +51,10 @@ class ItemAdmin(admin.ModelAdmin):
     ) -> None:
         regex_urls = set()
 
-        for url in queryset.values_list("long_link", flat=True):
+        for url in queryset.values_list(
+            Redirect.long_link.field.name,
+            flat=True,
+        ):
             netloc = urlparse(url).netloc.split(":")[0]
             parts = netloc.split(".")
             if len(parts) >= MIN_DOMAIN_PARTS:
