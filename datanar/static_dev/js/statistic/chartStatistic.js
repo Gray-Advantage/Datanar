@@ -1,19 +1,19 @@
 // Включение тултипов Bootstrap
 const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
+  '[data-bs-toggle="tooltip"]'
 );
 const tooltipList = [...tooltipTriggerList].map(
-    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
 
 const chartsConfig = [
-  {scriptId: "browserData", canvasId: "browserChart"},
-  {scriptId: "osData", canvasId: "osChart"},
-  {scriptId: "countryData", canvasId: "countryChart"},
-  {scriptId: "cityData", canvasId: "cityChart"},
+  { scriptId: "browserData", canvasId: "browserChart" },
+  { scriptId: "osData", canvasId: "osChart" },
+  { scriptId: "countryData", canvasId: "countryChart" },
+  { scriptId: "cityData", canvasId: "cityChart" },
 ];
 
-chartsConfig.forEach(({scriptId, canvasId}) => {
+chartsConfig.forEach(({ scriptId, canvasId }) => {
   const scriptElement = document.getElementById(scriptId);
   const canvasElement = document.getElementById(canvasId);
 
