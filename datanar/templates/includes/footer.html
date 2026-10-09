@@ -1,31 +1,31 @@
 {% load i18n %}
 {% load static %}
 
-<footer class="d-flex flex-wrap py-2 border-top mt-2">
+<footer class="d-flex flex-wrap py-3 border-top mt-auto">
   {% with request.resolver_match.view_name as view_name %}
-    <ul class="nav col-md-7 justify-content-start">
+    <ul class="nav md:col-7 justify-content-start">
       <li class="nav-item">
-        <a {% if view_name != "homepage:service_rules" %}href="{% url 'homepage:service_rules' %}"{% endif %} class="nav-link px-1 px-sm-2 text-body-secondary">
+        <a {% if view_name != "homepage:service_rules" %}href="{% url 'homepage:service_rules' %}"{% endif %} class="nav-link px-1 sm:px-3 fg-secondary">
           {% trans "service_rules" %}
         </a>
       </li>
       <li class="nav-item">
-        <a {% if view_name != "homepage:about" %}href="{% url 'homepage:about' %}"{% endif %} class="nav-link px-1 px-sm-2 text-body-secondary">
+        <a {% if view_name != "homepage:about" %}href="{% url 'homepage:about' %}"{% endif %} class="nav-link px-1 sm:px-3 fg-secondary">
           {% trans "about" %}
         </a>
       </li>
       <li class="nav-item">
-        <a {% if view_name != "api:docs_preamble" %}href="{% url 'api:docs_preamble' %}"{% endif %} class="nav-link px-1 px-sm-2 text-body-secondary">
+        <a {% if view_name != "api:docs_preamble" %}href="{% url 'api:docs_preamble' %}"{% endif %} class="nav-link px-1 sm:px-3 fg-secondary">
           {% trans "API" %}
         </a>
       </li>
     </ul>
   {% endwith %}
 
-  <div class="ms-auto py-2 m-0">
-    <p class="text-secondary me-2 mb-0">(v {{ settings.VERSION }})</p>
+  <div class="ms-auto py-3 m-0">
+    <p class="fg-secondary me-3 mb-0">(v {{ settings.VERSION }})</p>
   </div>
-  <div class="d-flex py-2 flex-grow-0 mx-auto mx-sm-0">
+  <div class="d-flex py-3 flex-grow-0 mx-auto sm:mx-0">
     <p class="mb-0">© {% now "Y" %} Datanar</p>
   </div>
 </footer>

@@ -1,89 +1,85 @@
 {% load thumbnail %}
 {% load i18n %}
 
-<header class="d-flex flex-wrap justify-content-center py-3 mb-2 border-bottom container">
+<header class="d-flex flex-wrap justify-content-center py-4 border-bottom container">
   {% with request.resolver_match.view_name as view_name %}
-    <a {% if view_name != "homepage:home" %}href="{% url 'homepage:home' %}"{% endif %} class="d-flex align-items-center me-md-auto link-body-emphasis text-decoration-none">
-      {% include 'svg/logo.svg' with class="ms-2 me-2" width=48 height=48 %}
-      <span class="fs-4 me-2">Datanar</span>
+    <a href="{% url 'homepage:home' %}" class="btn border-0 bg-transparent p-0 d-flex align-items-center md:me-auto link-body-emphasis text-decoration-none">
+      {% include 'svg/logo.svg' with class="ms-3" width=48 height=48 %}
+      <span class="fs-lg">Datanar</span>
     </a>
     <nav class="d-flex">
-      <nav class="my-auto nav-item dropdown">
-        <button class="btn border-0 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
-          <i id="theme-icon-active" class="bi bi-circle-half me-2"></i>
-          <span class="d-none d-lg-block" id="bd-theme-text">{% trans "theme" %}</span>
+      <nav class="my-auto nav-item me-3">
+        <button id="bd-theme" class="btn border-0 d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="menu" aria-label="{% trans 'Toggle theme' %}">
+          <i id="theme-icon-active" class="bi bi-circle-half" aria-hidden="true"></i>
+          <span class="visually-hidden">{% trans "Toggle theme" %}</span>
         </button>
-        <ul class="dropdown-menu dropend" aria-labelledby="bd-theme-text" data-bs-popper="static">
-          <li>
-            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="false">
-              <i class="bi bi-sun-fill me-2"></i>
-              {% trans "light" %}
-            </button>
-          </li>
-          <li>
-            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-              <i class="bi bi-moon-stars-fill me-2"></i>
-              {% trans "dark" %}
-            </button>
-          </li>
-          <li>
-            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
-              <i class="bi bi-circle-half me-2"></i>
-              {% trans "auto" %}
-            </button>
-          </li>
-        </ul>
+        <div id="bd-theme-menu" class="menu" aria-labelledby="bd-theme" data-bs-placement="end" data-bs-popper="static">
+          <button type="button" class="menu-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="false">
+            <i class="bi bi-sun-fill"></i>
+            {% trans "light" %}
+          </button>
+          <button type="button" class="menu-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <i class="bi bi-moon-stars-fill"></i>
+            {% trans "dark" %}
+          </button>
+          <button type="button" class="menu-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <i class="bi bi-circle-half"></i>
+            {% trans "auto" %}
+          </button>
+        </div>
       </nav>
-      <nav class="my-auto nav-item dropdown me-2">
-        <button class="btn border-0 dropdown-toggle d-flex align-items-center" id="language-dropdown" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle language">
-          <i class="bi bi-globe me-2"></i>
-          <span class="d-none d-lg-block" id="language-text">{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE|language_name_translated }}</span>
+      <nav class="my-auto nav-item me-3">
+        <button id="bd-language" class="btn border-0 d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="menu" aria-label="{% trans 'Toggle language' %}">
+          <i class="bi bi-globe" aria-hidden="true"></i>
+          <span class="visually-hidden">{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE|language_name_translated }}</span>
         </button>
-        <ul class="dropdown-menu dropend" aria-labelledby="language-text" data-bs-popper="static">
-        {% get_available_languages as LANGUAGES %}
-        {% for lang_code, lang_name in LANGUAGES %}
-          <li>
+        <div id="bd-language-menu" class="menu" aria-labelledby="bd-language" data-bs-placement="end" data-bs-popper="static">
+          {% get_available_languages as LANGUAGES %}
+          {% for lang_code, lang_name in LANGUAGES %}
             <form action="{% url 'set_language' %}" method="post" class="d-inline">
               {% csrf_token %}
               <input type="hidden" name="language" value="{{ lang_code }}">
-              <button type="submit" class="dropdown-item d-flex align-items-center {% if lang_code == LANGUAGE_CODE %}active{% endif %}" aria-pressed="{% if lang_code == LANGUAGE_CODE %}true{% else %}false{% endif %}">
-                <i class="bi bi-globe me-2"></i>
+              <button type="submit" class="menu-item d-flex align-items-center {% if lang_code == LANGUAGE_CODE %}active{% endif %}" aria-pressed="{% if lang_code == LANGUAGE_CODE %}true{% else %}false{% endif %}">
+                <i class="bi bi-globe"></i>
                 {{ lang_name }}
               </button>
             </form>
-          </li>
-        {% endfor %}
-        </ul>
+          {% endfor %}
+        </div>
       </nav>
       {% if request.resolver_match.view_name == 'users:profile' or request.resolver_match.app_name != 'users' %}
         {% if request.user.is_authenticated %}
           {% trans "no_user" as no_user %}
-          <div class="dropdown ms-2">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="{{ request.user.small_avatar_url }}" alt="{{ request.user.username }}" class="rounded-circle" width="48" height="48">
+          <div class="my-auto nav-item">
+            <button class="btn border-0 bg-transparent d-flex link-body-emphasis text-decoration-none" type="button" data-bs-toggle="menu" aria-expanded="false">
+              <img src="{{ request.user.small_avatar_url }}" alt="{{ request.user.username }}" class="rounded-circle" width="32" height="32">
               <strong>{{ request.user.username|default:no_user }}</strong>
-            </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" {% if view_name != "users:profile" %}href="{% url 'users:profile' %}"{% endif %}>{% trans "my_profile" %}</a></li>
-              <li><a {% if view_name != "statistic:my_links" %}href="{% url 'statistic:my_links' %}"{% endif %} class="dropdown-item" >{% trans "my_links" %}</a></li>
+            </button>
+            <div class="menu">
+              <a class="menu-item" {% if view_name != 'users:profile' %}href="{% url 'users:profile' %}"{% endif %}>
+                {% trans "my_profile" %}
+              </a>
+              <a class="menu-item" {% if view_name != 'statistic:my_links' %}href="{% url 'statistic:my_links' %}"{% endif %}>
+                {% trans "my_links" %}
+              </a>
               {% if request.user.is_staff %}
-                <li><hr class="dropdown-divider"></li>
-                  <li><a {% if view_name != "dashboard:all_links" %}href="{% url 'dashboard:all_links' %}"{% endif %} class="dropdown-item">
-                    {% trans "dashboard" %}
-                  </a></li>
-                <li><a href="{% url 'admin:index' %}" class="dropdown-item">
+                <hr class="menu-divider">
+                <a class="menu-item" {% if view_name != 'dashboard:all_links' %}href="{% url 'dashboard:all_links' %}"{% endif %}>
+                  {% trans "dashboard" %}
+                </a>
+                <a class="menu-item" href="{% url 'admin:index' %}">
                   {% trans "admin_panel" %}
-                </a></li>
+                </a>
               {% endif %}
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'users:logout' %}">{% trans "exit" %}</a></li>
-            </ul>
+              <hr class="menu-divider">
+              <a class="menu-item" href="{% url 'users:logout' %}">{% trans "exit" %}</a>
+            </div>
           </div>
         {% else %}
-          <a href="{% url 'users:login' %}" class="btn btn-outline my-auto me-2">
+          <a href="{% url 'users:login' %}" class="btn-outline theme-secondary my-auto me-3">
             {% trans "sign_in" %}
           </a>
-          <a href="{% url 'users:signup' %}" class="btn btn-outline my-auto">
+          <a href="{% url 'users:signup' %}" class="btn-outline theme-secondary my-auto">
             {% trans "registration" %}
           </a>
         {% endif %}
