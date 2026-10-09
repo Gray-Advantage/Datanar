@@ -36,7 +36,7 @@
       return;
     }
 
-    const themeSwitcherText = document.querySelector("#bd-theme-text");
+    const themeSwitcherText = document.querySelector("#bd-theme");
     const activeThemeIcon = document.querySelector("#theme-icon-active");
     const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
     const svgOfActiveBtn = btnToActive.querySelector("i").getAttribute("class");
