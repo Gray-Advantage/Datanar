@@ -10,10 +10,10 @@
 
 
 {% block content %}
-<h3 class="text-center mt-3">{% trans "about_beginning" %}</h3>
+<h3 class="text-center mt-5">{% trans "about_beginning" %}</h3>
 <br>
-<div class="d-flex mt-5 row">
-  <div class="d-flex flex-column mx-auto col-12 col-lg-7">
+<div class="d-flex mt-12 row">
+  <div class="d-flex flex-column mx-auto col-12 lg:col-7">
     <h5 class="text-justify">{% trans "about_you_can_do" %}</h5>
     <div class="d-flex">
       <ul class="font-20">
@@ -29,7 +29,7 @@
       </ul>
     </div>
   </div>
-  <div class="d-flex flex-column mx-auto col-12 col-lg-3">
+  <div class="d-flex flex-column mx-auto col-12 lg:col-3">
     <h5 class="text-justify">{% trans "about_using" %}</h5>
     <div class="d-flex">
       <ul class="font-20">
@@ -48,30 +48,30 @@
   </div>
 </div>
 
-<h5 class="text-center mt-5">{% trans "developers" %}</h5>
+<h5 class="text-center mt-12">{% trans "developers" %}</h5>
 
 <div class="d-flex row mt-2">
-  <div class="d-flex col-12 col-xl-4 col-md-12">
+  <div class="d-flex col-12 xl:col-4 md:col-12">
     <div class="mx-auto d-flex">
-      <img src="{% static 'img/authors/sergey.jpg' %}" alt="sergey" class="me-2 rounded-circle" width="32" height="32">
-      <p class="me-2 mt-1">{% trans "sergey" %}</p><a href="https://t.me/Gray_Advantage" class="me-2 mt-1">@Gray_Advantage</a>
+      <img src="{% static 'img/authors/sergey.jpg' %}" alt="sergey" class="me-5 rounded-circle" width="32" height="32">
+      <p class="me-3 mt-1">{% trans "sergey" %}</p><a href="https://t.me/Gray_Advantage" class="me-3 mt-1">@Gray_Advantage</a>
     </div>
   </div>
-  <div class="d-flex col-12 col-xl-4 col-md-6">
+  <div class="d-flex col-12 xl:col-4 md:col-6">
     <div class="mx-auto d-flex">
-      <img src="{% static 'img/authors/vladimir.jpg' %}" alt="vladimir" class="me-3 rounded-circle" width="32" height="32">
-      <p class="me-2 mt-1">{% trans "vladimir" %}</p><a href="https://t.me/brandonzorn" class="me-2 mt-1">@brandonzorn</a>
+      <img src="{% static 'img/authors/vladimir.jpg' %}" alt="vladimir" class="me-5 rounded-circle" width="32" height="32">
+      <p class="me-3 mt-1">{% trans "vladimir" %}</p><a href="https://t.me/brandonzorn" class="me-3 mt-1">@brandonzorn</a>
     </div>
   </div>
-  <div class="d-flex col-12 col-xl-4 col-md-6">
+  <div class="d-flex col-12 xl:col-4 md:col-6">
     <div class="mx-auto d-flex">
-      <img src="{% static 'img/authors/artem.jpg' %}" alt="artem" class="rounded-circle me-3" width="32" height="32">
-      <p class="me-2 mt-1">{% trans "artem" %}</p><a href="https://t.me/piper273" class="me-2 mt-1">@piper273</a>
+      <img src="{% static 'img/authors/artem.jpg' %}" alt="artem" class="rounded-circle me-5" width="32" height="32">
+      <p class="me-3 mt-1">{% trans "artem" %}</p><a href="https://t.me/piper273" class="me-3 mt-1">@piper273</a>
     </div>
   </div>
 </div>
 
-<div class="text-center font-20 mt-5 mb-3">
+<div class="text-center font-20 mt-12 mb-5">
   <i class="bi bi-github" style="font-size: 24px"></i> <a href="https://github.com/Gray-Advantage/Datanar-Django">{% trans "github_project" %}</a>
 </div>
 {% endblock %}

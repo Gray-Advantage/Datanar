@@ -27,7 +27,7 @@
 
 {% block content %}
   <div id="drop_zone" class="flex-grow-1">
-    <div class="d-flex mt-5">
+    <div class="d-flex mt-12">
       <div class="mx-auto">
         {% include "includes/logo.html" %}
         <p class="text-center">{% trans "short_description_under_logo" %}</p>
@@ -36,21 +36,21 @@
         {% endif %}
       </div>
     </div>
-    <form id="mainForm" class="mt-3" method="post" enctype="multipart/form-data">
+    <form id="mainForm" class="mt-5" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {% for field in form %}
-        <div class="form-group col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+        <div class="form-group col-12 md:col-10 lg:col-9 xl:col-8 2xl:col-7 mx-auto">
           {% if forloop.first %}
             <label id="longLinklabelNormal" for="{{ field.id_for_label }}">{{ field.label }}</label>
             <label id="longLinklabelFile" class="d-none" for="{{ field.id_for_label }}">{% trans "label_link_file" %}</label>
-            <div id="firstContainer" class="input-group mb-2">
+            <div id="firstContainer" class="input-group mb-3">
               {{ field }}
               <input id="fileNameField" type="text" class="form-control input-field d-none" readonly="">
-              <button type="button" id="deleteFileButton" class="btn btn-outline-danger d-none">{% trans "delete_file" %}</button>
+              <button type="button" id="deleteFileButton" class="btn-outline theme-danger d-none">{% trans "delete_file" %}</button>
               {% if request.user.is_authenticated %}
-                <button type="button" id="chooseFileButton" class="btn btn-outline">{% trans "choose_file" %}</button>
+                <button type="button" id="chooseFileButton" class="btn-outline theme-secondary">{% trans "choose_file" %}</button>
               {% endif %}
-              <input type="submit" class="btn btn-outline rounded-end-2" value="{% trans 'shorten' %}">
+              <input type="submit" class="btn-outline theme-secondary rounded-end-4" value="{% trans 'shorten' %}">
               {% if field.errors %}
                 <div class="invalid-feedback">
                   {{ field.errors|first }}
@@ -75,20 +75,19 @@
     </form>
 
     {% if messages %}
-      <div class="list-group gap-2 mx-auto d-flex mb-3">
+      <div class="list-group gap-3 mx-auto d-flex mb-5">
         {% for message in messages %}
           {% if message.level == SHORT_LINK %}
             {% include "includes/link_card.html" with link=message %}
           {% elif message.level == LOADING_LINKS %}
-            <div id="fileLinksLoader" class="spinner-border mx-auto mt-5" role="status">
+            <div id="fileLinksLoader" class="spinner-border mx-auto mt-12" role="status">
               <span class="visually-hidden">{{ message }}</span>
             </div>
           {% endif %}
         {% endfor %}
       </div>
     {% endif %}
-
-    {% include "qr_codes/QR_modal_preview.html" %}
-    {% include "qr_codes/QR_modal_delete.html" %}
   </div>
+  {% include "qr_codes/QR_modal_preview.html" %}
+  {% include "qr_codes/QR_modal_delete.html" %}
 {% endblock %}
