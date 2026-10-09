@@ -1,24 +1,24 @@
 {% load i18n %}
 
-<div class="modal fade" id="blockedDomainDelete" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5">{% trans "are_you_sure" %}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        {% trans "this_action_cannot_be_undone" %}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
-        <form method="POST">
-          {% csrf_token %}
-          <input type="hidden" name="_method" value="delete" hidden="hidden">
-          <input id="blockedDomainId" name="id" type="hidden" value="" hidden="hidden">
-          <button type="submit" class="btn btn-outline-danger">{% trans "Delete" %}</button>
-        </form>
-      </div>
-    </div>
+<dialog class="dialog dialog-slide-down" id="blockedDomainDelete">
+  <div class="dialog-header">
+    <h1 class="dialog-title fs-lg">{% trans "are_you_sure" %}</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="dialog"></button>
   </div>
-</div>
+  <div class="dialog-body">
+    {% trans "this_action_cannot_be_undone" %}
+  </div>
+  <div class="dialog-footer">
+    <button type="button" class="btn-outline theme-light" data-bs-dismiss="dialog">
+      {% trans "Cancel" %}
+    </button>
+    <form method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="_method" value="delete" hidden="hidden">
+      <input id="blockedDomainId" name="id" type="hidden" value="" hidden="hidden">
+      <button type="submit" class="btn-outline theme-danger">
+        {% trans "Delete" %}
+      </button>
+    </form>
+  </div>
+</dialog>

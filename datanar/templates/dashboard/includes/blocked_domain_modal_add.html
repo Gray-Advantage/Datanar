@@ -1,21 +1,23 @@
 {% load i18n %}
 
-<div class="modal fade" id="blockedDomainAdd" tabindex="-1">
-  <div class="modal-dialog">
-    <form method="POST" class="modal-content">
-      {% csrf_token %}
-      <div class="modal-header">
-        <h1 class="modal-title fs-5">{% trans "new_blocked_domain_regex" %}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" name="_method" value="put" hidden="hidden">
-        <input id="blockedDomainRegexNew" class="form-control" name="new_domain_regex" type="text" value="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
-        <button type="submit" class="btn btn-outline-success">{% trans "Add" %}</button>
-      </div>
-    </form>
+<dialog class="dialog dialog-slide-down" id="blockedDomainAdd">
+  <div class="dialog-header">
+    <h1 class="dialog-title fs-lg">{% trans "new_blocked_domain_regex" %}</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="dialog"></button>
   </div>
-</div>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="dialog-body">
+      <input type="hidden" name="_method" value="put" hidden="hidden">
+      <input id="blockedDomainRegexNew" class="form-control" name="new_domain_regex" type="text" value="">
+    </div>
+    <div class="dialog-footer">
+      <button type="button" class="btn-outline theme-light" data-bs-dismiss="dialog">
+        {% trans "Cancel" %}
+      </button>
+      <button type="submit" class="btn-outline theme-success">
+        {% trans "Add" %}
+      </button>
+    </div>
+  </form>
+</dialog>

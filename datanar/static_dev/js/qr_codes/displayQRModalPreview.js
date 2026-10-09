@@ -1,5 +1,5 @@
-let qrImages = document.querySelectorAll(".card-body img");
-let qrButtons = document.querySelectorAll(".card-body button[data-bs-target='#QRPreview']")
+let qrImages = document.querySelectorAll(".card-row img");
+let qrButtons = document.querySelectorAll(".card-row button[data-bs-target='#QRPreview']")
 
 
 function updateModalPreview(img) {
@@ -10,7 +10,7 @@ function updateModalPreview(img) {
   let jpgDownloadUrl = downloadLinks[1].getAttribute("value");
   let pngDownloadUrl = downloadLinks[2].getAttribute("value");
 
-  let link = img.closest(".card-body").querySelector('a[target="_blank"]');
+  let link = img.closest(".card-row").querySelector('a[target="_blank"]');
   document.getElementById("qrRedirect").textContent = link.querySelector("strong").innerHTML;
 
   document.getElementById("qrBigPreview").setAttribute("src", qrCodeUrl);
@@ -28,7 +28,7 @@ qrImages.forEach(img => {
 
 qrButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    let img = btn.closest(".card-body").querySelector("img");
+    let img = btn.closest(".card-row").querySelector("img");
     updateModalPreview(img);
   });
 });

@@ -1,20 +1,16 @@
-<div class="modal fade" id="QRPreview" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        {% include 'svg/link.svg' %} <h5 id="qrRedirect" class="modal-title text-truncate"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body d-flex">
-        <img id="qrBigPreview" class="rounded-3 border m-auto mw-100" src="">
-      </div>
-      <div class="modal-footer d-flex">
-        <div class="mx-auto">
-          <a id="svgDownloadLink" class="btn btn-outline">SVG</a>
-          <a id="jpgDownloadLink" class="btn btn-outline ms-2">JPG</a>
-          <a id="pngDownloadLink" class="btn btn-outline ms-2">PNG</a>
-        </div>
-      </div>
+<dialog class="dialog dialog-slide-down " id="QRPreview">
+  <div class="dialog-header">
+    {% include 'svg/link.svg' %} <h5 id="qrRedirect" class="dialog-title text-truncate"></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="dialog"></button>
+  </div>
+  <div class="dialog-body d-flex">
+    <img id="qrBigPreview" class="rounded-5 border m-auto max-w-100" src="">
+  </div>
+  <div class="dialog-footer d-flex">
+    <div class="mx-auto">
+      <a id="svgDownloadLink" class="btn-outline theme-secondary">SVG</a>
+      <a id="jpgDownloadLink" class="btn-outline theme-secondary ms-2">JPG</a>
+      <a id="pngDownloadLink" class="btn-outline theme-secondary ms-2">PNG</a>
     </div>
   </div>
-</div>
+</dialog>
