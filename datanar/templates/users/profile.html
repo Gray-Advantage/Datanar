@@ -10,21 +10,21 @@
 
 {% block content %}
   <h1 class="text-center">{% trans "my_profile" %}</h1>
-  <form class="d-flex flex-column col-12 col-md-9 col-lg-8 col-xl-7 col-xxl-6 mx-auto mt-5" method="post" enctype="multipart/form-data">
+  <form class="d-flex flex-column col-12 md:col-9 lg:col-8 xl:col-7 2xl:col-6 mx-auto mt-5" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="d-flex flex-column flex-sm-row">
-      <div class="d-flex flex-column align-items-center mb-3 mb-sm-0">
+    <div class="d-flex flex-column sm:flex-row">
+      <div class="d-flex flex-column align-items-center mb-3 sm:mb-0">
         <img id="avatar"
              src="{{ request.user.avatar_url }}" alt="{{ request.user.username }}"
-             class="rounded-circle cursor-pointer object-fit-cover"
-             width="200" height="200">
+             class="avatar rounded-circle cursor-pointer object-fit-cover"
+        >
         {% if request.user.has_avatar %}
-          <button type="button" id="delete_avatar" class="btn btn-outline-danger btn-sm mt-2">
+          <button type="button" id="delete_avatar" class="btn-outline theme-danger btn-sm mt-2">
             {% trans "delete_avatar" %}
           </button>
         {% endif %}
       </div>
-      <div class="d-flex w-100 ms-0 ms-sm-4 flex-column">
+      <div class="d-flex w-100 ms-0 sm:ms-4 flex-column">
         <div>
           {% for field in form %}
             <div class="form-group w-auto mb-2 {% if field.name == 'avatar' %}d-none{% endif %}">
@@ -34,7 +34,7 @@
               <div class="input-group{% if field.errors %} has-validation{% endif %}">
                 {{ field }}
                 {% if field.name == "email" %}
-                  <a class="btn btn-outline" href="{% url 'users:email_change' %}">
+                  <a class="btn-outline theme-secondary" href="{% url 'users:email_change' %}">
                     {% trans "change_email" %}
                   </a>
                 {% endif %}
@@ -47,8 +47,8 @@
             </div>
           {% endfor %}
           <div class="d-flex gap-2 mt-4">
-            <a class="btn btn-outline" href="{% url 'users:password_change' %}">{% trans "change_password" %}</a>
-            <button id="submit_button" type="submit" class="btn btn-outline d-none">{% trans "save" %}</button>
+            <a class="btn-outline theme-secondary" href="{% url 'users:password_change' %}">{% trans "change_password" %}</a>
+            <button id="submit_button" type="submit" class="btn-outline theme-secondary d-none">{% trans "save" %}</button>
           </div>
         </div>
       </div>

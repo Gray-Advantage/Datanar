@@ -16,12 +16,5 @@
 {% endblock %}
 
 {% block content %}
-  {% include "includes/paginator.html" %}
-  <div class="list-group gap-2 mx-auto">
-    {% for link in links %}
-      {% include "includes/link_card.html" with link=link.short_link %}
-    {% endfor %}
-  </div>
-  {% include "qr_codes/QR_modal_preview.html" %}
-  {% include "qr_codes/QR_modal_delete.html" %}
+  {% include "includes/links_group.html" with links=links %}
 {% endblock %}

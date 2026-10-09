@@ -4,14 +4,14 @@
 {% block title %}{% trans "redirect_page" %}{% endblock %}
 
 {% block content %}
-  <form class="mt-5" method="post">
+  <form class="mt-12" method="post" data-bs-validate>
     {% csrf_token %}
     {% for field in form %}
-      <div class="form-group col-12 col-md-9 col-lg-8 col-xl-7 col-xxl-6 mx-auto">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      <div class="form-field col-12 md:col-9 lg:col-8 xl:col-7 2xl:col-6 mx-auto mb-5">
+        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
         {{ field }}
         {% if field.errors %}
-          <div class="invalid-feedback">
+          <div class="invalid-feedback d-block">
             {{ field.errors|first }}
           </div>
         {% endif %}

@@ -10,15 +10,21 @@
 {% endblock %}
 
 {% block dashboard_content %}
-  <button class="btn btn-outline-success mx-auto my-2" data-bs-toggle="modal" data-bs-target="#blockedDomainAdd">{% trans "Add" %}</button>
+  <button class="btn-outline theme-success mx-auto my-2" data-bs-toggle="dialog" data-bs-target="#blockedDomainAdd">
+    {% trans "Add" %}
+  </button>
   {% include "includes/paginator.html" %}
-  <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+  <div class="col-12 md:col-10 lg:col-9 xl:col-8 2xl:col-7 mx-auto">
     {% for domain in domains %}
-      <div class="input-group mt-2">
-        <input type="text" class="form-control" placeholder="{% trans 'domain_regex_that_will_be_prohibited_from_shortening' %}" value="{{ domain.domain_regex }}" readonly disabled>
-        <button class="btn btn-outline" type="button" data-bs-toggle="modal" data-bs-target="#blockedDomainChange" data-bs-domain-id="{{ domain.id }}" data-bs-domain-regex="{{ domain.domain_regex }}">{% trans "Change" %}</button>
-        <button class="btn btn-outline-danger" type="button" data-bs-toggle="modal" data-bs-target="#blockedDomainDelete" data-bs-domain-id="{{ domain.id }}">{% trans "Delete" %}</button>
-      </div>
+    <div class="input-group mt-2">
+      <input type="text" class="form-control" placeholder="{% trans 'domain_regex_that_will_be_prohibited_from_shortening' %}" value="{{ domain.domain_regex }}" readonly disabled>
+      <button type="button" class="btn-outline theme-secondary" data-bs-toggle="dialog" data-bs-target="#blockedDomainChange" data-bs-domain-id="{{ domain.id }}" data-bs-domain-regex="{{ domain.domain_regex }}">
+        {% trans "Change" %}
+      </button>
+      <button class="btn-outline theme-danger" type="button" data-bs-toggle="dialog" data-bs-target="#blockedDomainDelete" data-bs-domain-id="{{ domain.id }}">
+        {% trans "Delete" %}
+      </button>
+    </div>
     {% endfor %}
   </div>
   {% include "dashboard/includes/blocked_domain_modal_change.html" %}

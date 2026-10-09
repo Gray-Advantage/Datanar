@@ -11,10 +11,10 @@
 
 {% block content %}
   <div class="d-flex flex-column">
-    <h3 class="text-center mt-5">{% trans "link" %}: <a href="{% url 'redirects:redirect' link %}" target="_blank"><strong>{{ request.get_host }}/{{ link }}</strong></a></h3>
+    <h3 class="text-center mt-12">{% trans "link" %}: <a href="{% url 'redirects:redirect' link %}" target="_blank"><strong>{{ request.get_host }}/{{ link }}</strong></a></h3>
     <p class="text-center mb-1">({% trans "original" %}: <a href="{{ redirect.long_link }}" target="_blank"><strong>{{ redirect.long_link }}</strong></a>)</p>
     <p class="mx-auto mb-0">{% trans "is_active" %}: {% if redirect.is_active %}{% trans "yes" %}{% else %}{% trans "no" %} <i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{% trans 'after_10_days_deactivate_redirect_will_be_delete' %}"></i>{% endif %}</p>
-    <table class="text-center table mt-3 d-none d-md-table">
+    <table class="text-center table mt-5 d-none md:d-table">
       <thead>
         <tr>
           <th scope="col" class="w-25">{% trans "created" %}</th>
@@ -32,7 +32,7 @@
         </tr>
       </tbody>
     </table>
-    <table class="table mt-3 d-table d-md-none">
+    <table class="table mt-5 d-table md:d-none">
       <tbody>
         <tr>
           <th scope="row" class="w-50 text-start">{% trans "created" %}</th>
@@ -52,21 +52,29 @@
         </tr>
       </tbody>
     </table>
-    <div class="mx-auto mt-3">
+    <div class="mx-auto mt-5">
       <p class="text-center mb-1">{% trans "statistics_for" %}:</p>
-      <a href="{% url 'statistic:link_detail' link "day" %}" class="btn {% if period == "day" %}btn-full{% else %}btn-outline{% endif %}">{% trans "day" %}</a>
-      <a href="{% url 'statistic:link_detail' link "month" %}" class="btn {% if period == "month" %}btn-full{% else %}btn-outline{% endif %}">{% trans "month" %}</a>
-      <a href="{% url 'statistic:link_detail' link "year" %}" class="btn {% if period == "year" %}btn-full{% else %}btn-outline{% endif %}">{% trans "year" %}</a>
-      <a href="{% url 'statistic:link_detail' link "all_time" %}" class="btn {% if period == "all_time" %}btn-full{% else %}btn-outline{% endif %}">{% trans "all_time" %}</a>
+      <a href="{% url 'statistic:link_detail' link 'day' %}" class="btn-outline theme-secondary {% if period == 'day' %}active{% endif %}">
+        {% trans "day" %}
+      </a>
+      <a href="{% url 'statistic:link_detail' link 'month' %}" class="btn-outline theme-secondary {% if period == 'month' %}active{% endif %}">
+        {% trans "month" %}
+      </a>
+      <a href="{% url 'statistic:link_detail' link 'year' %}" class="btn-outline theme-secondary {% if period == 'year' %}active{% endif %}">
+        {% trans "year" %}
+      </a>
+      <a href="{% url 'statistic:link_detail' link 'all_time' %}" class="btn-outline theme-secondary {% if period == 'all_time' %}active{% endif %}">
+        {% trans "all_time" %}
+      </a>
     </div>
-    <p class="text-center mt-4">{% trans "total_number_of_clicks_during_the_period" %}: {{ clicks }}</p>
+    <p class="text-center mt-7">{% trans "total_number_of_clicks_during_the_period" %}: {{ clicks }}</p>
 
     {{ browser|json_script:"browserData" }}
     {{ os|json_script:"osData" }}
     {{ country|json_script:"countryData" }}
     {{ city|json_script:"cityData" }}
-    <div class="row mt-2">
-      <div class="col-lg-3 col-md-6 col-12 mx-auto mt-2">
+    <div class="row mt-3">
+      <div class="col-12 md:col-6 lg:col-3 mx-auto mt-3">
         <div class="card h-100">
           <div class="card-body">
             <h6 class="text-center"><strong>{% trans "Browsers" %}</strong></h6>
@@ -74,7 +82,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mx-auto mt-2">
+      <div class="col-12 md:col-6 lg:col-3 mx-auto mt-3">
         <div class="card h-100">
           <div class="card-body">
             <h6 class="text-center"><strong>{% trans "OS" %}</strong></h6>
@@ -82,7 +90,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mx-auto mt-2">
+      <div class="col-12 md:col-6 lg:col-3 mx-auto mt-3">
         <div class="card h-100">
           <div class="card-body">
             <h6 class="text-center"><strong>{% trans "Countries" %}</strong></h6>
@@ -90,7 +98,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mx-auto mt-2">
+      <div class="col-12 md:col-6 lg:col-3 mx-auto mt-3">
         <div class="card h-100">
           <div class="card-body">
             <h6 class="text-center"><strong>{% trans "Cities" %}</strong></h6>
@@ -100,7 +108,7 @@
       </div>
     </div>
     <p class="text-center mb-0 mt-1">( <a href='https://db-ip.com'>{% trans "ip_geo_by_DB-IP" %}</a> )</p>
-    <a href="{% url "statistic:download" link period %}" class="btn btn-outline mx-auto my-3">
+    <a href="{% url 'statistic:download' link period %}" class="btn-outline theme-secondary mx-auto my-5">
       {% trans "download_statistics_for_the_period" %}
     </a>
   </div>
