@@ -41,7 +41,7 @@ class ClickManager(models.Manager):
         short_link: str,
     ) -> "QuerySet[Click]":
         return self.for_short_link_by_all_time(short_link).filter(
-            clicked_at__gte=timezone.now() - timedelta(days=365),
+            created_at__gte=timezone.now() - timedelta(days=365),
         )
 
     def for_short_link_by_last_month(
@@ -49,12 +49,12 @@ class ClickManager(models.Manager):
         short_link: str,
     ) -> "QuerySet[Click]":
         return self.for_short_link_by_all_time(short_link).filter(
-            clicked_at__gte=timezone.now() - timedelta(days=30),
+            created_at__gte=timezone.now() - timedelta(days=30),
         )
 
     def for_short_link_by_last_day(self, short_link: str) -> "QuerySet[Click]":
         return self.for_short_link_by_all_time(short_link).filter(
-            clicked_at__gte=timezone.now() - timedelta(days=1),
+            created_at__gte=timezone.now() - timedelta(days=1),
         )
 
 
