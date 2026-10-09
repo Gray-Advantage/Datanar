@@ -1,0 +1,10 @@
+{% include "includes/paginator.html" %}
+<div class="d-flex justify-content-center w-100">
+  <div class="list-group gap-3 mx-auto">
+    {% for link in links %}
+      {% include "includes/link_card.html" with link=link.short_link %}
+    {% endfor %}
+  </div>
+</div>
+{% include "qr_codes/QR_modal_preview.html" %}
+{% include "qr_codes/QR_modal_delete.html" %}
