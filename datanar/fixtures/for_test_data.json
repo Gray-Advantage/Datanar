@@ -3,7 +3,9 @@
     "model": "dashboard.blockeddomain",
     "pk": 1,
     "fields": {
-        "domain_regex": ".*example\\..*"
+        "domain_regex": ".*example\\..*",
+        "created_at": "2023-12-18T03:06:22.932Z",
+        "updated_at": "2023-12-18T03:06:22.932Z"
     }
 },
 {
