@@ -155,7 +155,7 @@ DATABASES = {
 if not USE_FILE_DATABASE:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "ENGINE": "django.db.backends.postgresql",
             "NAME": config("DATANAR_DATABASE_NAME"),
             "USER": config("DATANAR_DATABASE_USER"),
             "PASSWORD": config("DATANAR_DATABASE_PASSWORD"),
