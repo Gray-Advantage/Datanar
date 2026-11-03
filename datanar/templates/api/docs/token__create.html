@@ -4,7 +4,7 @@
 {% block api_title %}Token - {% trans "creating" %}{% endblock %}
 
 {% block api_content %}
-  <h4 class="mb-4"><strong>POST&#32;&gt;&gt;&#32;<a href="#">{{ server_url }}/api/v1/api-token-auth-update/</a></strong></h4>
+  <h4 class="mb-4"><strong>POST&#32;&gt;&gt;&#32;<a href="#">{{ server_url }}/api/api-token-auth-update/</a></strong></h4>
 
   <p class="mb-4">{% trans "to_start_interacting_with_extended_API_you_need_token" %} {% trans "each_new_POST_request_recreates_token" %}</p>
 
@@ -105,7 +105,7 @@
 
 # {% trans "reminder_that_passwords_better_kept_in_separate_file" %}
 auth = requests.post(
-    "{{ server_url }}/api/v1/api-token-auth-update/",
+    "{{ server_url }}/api/api-token-auth-update/",
     data={
         "username": "user",
         "password": "very1secret3password!",

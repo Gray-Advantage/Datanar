@@ -4,7 +4,7 @@
 {% block api_title %}Redirect - {% trans "deleting" %}{% endblock %}
 
 {% block api_content %}
-  <h4 class="mb-4"><strong>DELETE&#32;&gt;&gt;&#32;<a href="#">{{ server_url }}/api/v1/redirects/{id}/</a></strong></h4>
+  <h4 class="mb-4"><strong>DELETE&#32;&gt;&gt;&#32;<a href="#">{{ server_url }}/api/redirects/{id}/</a></strong></h4>
 
   <p class="mb-4">{% trans "delete_redirect_by_id" %}</p>
 
@@ -83,7 +83,7 @@
 
 # {% trans "reminder_that_passwords_better_kept_in_separate_file" %}
 auth = requests.post(
-    "{{ server_url }}/api/v1/api-token-auth/",
+    "{{ server_url }}/api/api-token-auth/",
     data={
         "username": "user",
         "password": "very1secret3password!",
@@ -92,7 +92,7 @@ auth = requests.post(
 
 # {% trans "get_all_redirects_for_user" %}
 my_redirects = requests.get(
-    "{{ server_url }}/api/v1/redirects/",
+    "{{ server_url }}/api/redirects/",
     data={
         "token": auth.json()["token"]
     }
@@ -100,7 +100,7 @@ my_redirects = requests.get(
 
 # {% trans "delete_redirect_by_id" %}
 delete_redirect = requests.delete(
-    f"{{ server_url }}/api/v1/redirects/{my_redirects.json()[-1]['id']}/",
+    f"{{ server_url }}/api/redirects/{my_redirects.json()[-1]['id']}/",
     data={
         "token": auth.json()["token"],
     }
