@@ -18,6 +18,7 @@ class RedirectSerializer(serializers.ModelSerializer):
             Redirect.validity_days.field.name,
             Redirect.validity_clicks.field.name,
             Redirect.created_at.field.name,
+            Redirect.updated_at.field.name,
             Redirect.create_method.field.name,
             Redirect.is_active.field.name,
             Redirect.deactivated_at.field.name,
