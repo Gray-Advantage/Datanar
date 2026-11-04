@@ -27,22 +27,37 @@ class HomeView(FormMethodExtender, FormView):
             return RedirectFormExtended
         return RedirectForm
 
+    def get_client_ip(self) -> str | None:
+        ip_address = self.request.META.get("HTTP_X_REAL_IP")
+        if ip_address is None:
+            return self.request.META.get("REMOTE_ADDR")
+        return ip_address
+
     def form_valid(self, form: RedirectForm) -> HttpResponse:
-        if "links_file" in self.request.FILES:
-            links_file = form.cleaned_data["links_file"]
+        links_file_field = "links_file"
+
+        ip_address = self.get_client_ip()
+        user = self.request.user
+        if not user.is_authenticated:
+            user = None
+
+        if user is not None and links_file_field in self.request.FILES:
+            data = form.cleaned_data
+
+            links_file = data[links_file_field]
 
             file_path = default_storage.save(
                 "link-files/" + links_file.name,
                 ContentFile(links_file.read()),
             )
-            data = form.cleaned_data
-            data["links_file"] = file_path
+
+            data[links_file_field] = file_path
 
             task = create_redirects.delay(
                 data,
-                self.request.user.id,
+                user.id,
                 self.request.get_host(),
-                self.request.META.get("HTTP_X_REAL_IP"),
+                ip_address,
             )
 
             messages.add_message(
@@ -53,19 +68,19 @@ class HomeView(FormMethodExtender, FormView):
 
             return super().form_valid(form)
 
-        if "links_file" in form.cleaned_data:
-            del form.cleaned_data["links_file"]
+        if links_file_field in form.cleaned_data:
+            del form.cleaned_data[links_file_field]
 
         long_link = form.cleaned_data[Redirect.long_link.field.name]
         url_long_link = urlparse(long_link)
 
         if url_long_link.netloc != self.request.get_host():
-            redirect = Redirect.objects.create(**form.cleaned_data)
-            redirect.create_method = Redirect.CreateMethod.WEB
-            redirect.ip_address = self.request.META.get("HTTP_X_REAL_IP")
-            if self.request.user.is_authenticated:
-                redirect.user = self.request.user
-            redirect.save()
+            redirect = Redirect.objects.create(
+                **form.cleaned_data,
+                create_method=Redirect.CreateMethod.WEB,
+                ip_address=ip_address,
+                user=user,
+            )
             short_link = redirect.short_link
         else:
             short_link = url_long_link.path
