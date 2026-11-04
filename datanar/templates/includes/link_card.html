@@ -14,7 +14,9 @@
         {% endif %}
       {% endif %}
       <button class="btn btn-outline sm-screen-show mt-1" data-bs-toggle="modal" data-bs-target="#QRPreview"><i class="bi bi-qr-code-scan"></i></button>
-      <button class="btn btn-outline-danger mt-1" data-bs-toggle="modal" data-bs-target="#deleteRedirect" data-bs-short-link="{{ link }}">{% trans "Delete" %}</button>
+      {% if request.user.is_authenticated %}
+        <button class="btn btn-outline-danger mt-1" data-bs-toggle="modal" data-bs-target="#deleteRedirect" data-bs-short-link="{{ link }}">{% trans "Delete" %}</button>
+      {% endif %}
     </div>
   </div>
   <div class="vr h-auto sm-screen-hide"></div>
