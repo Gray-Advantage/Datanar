@@ -28,7 +28,12 @@ class RedirectManager(models.Manager):
 
         if redirect.is_active and (is_expired or is_clicks_exceeded):
             redirect.deactivate()
-            redirect.save()
+            redirect.save(
+                update_fields=[
+                    Redirect.is_active.field.name,
+                    Redirect.deactivated_at.field.name,
+                ],
+            )
 
         return redirect
 
