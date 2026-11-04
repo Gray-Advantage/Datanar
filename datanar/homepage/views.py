@@ -84,10 +84,18 @@ class HomeView(FormMethodExtender, FormView):
         context["LOADING_LINKS"] = LOADING_LINKS
         return context
 
-    def delete(self, request: HttpRequest) -> HttpResponseRedirect:
-        Redirect.objects.filter(
-            short_link=request.POST.get("short_link"),
-        ).delete()
+    def delete(
+        self,
+        request: HttpRequest,
+        *args: Any,
+        **kwargs: Any,
+    ) -> HttpResponseRedirect:
+        short_link = request.POST.get(Redirect.short_link.field.name)
+        if request.user.is_authenticated and short_link:
+            Redirect.objects.filter(
+                short_link=short_link,
+                user=request.user,
+            ).delete()
         return HttpResponseRedirect(request.get_full_path())
 
 
