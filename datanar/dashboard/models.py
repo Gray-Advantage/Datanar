@@ -29,8 +29,11 @@ class BlockedDomainManager(models.Manager):
         return domain_regex
 
     def is_blocked(self, url: str) -> bool:
-        if is_link_shortener(url):
-            return True
+        try:
+            if is_link_shortener(url):
+                return True
+        except ValueError:
+            pass
         for domain in self.all():
             if re.fullmatch(self.upgrade_regex(domain.domain_regex), url):
                 return True
