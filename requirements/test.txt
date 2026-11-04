@@ -7,7 +7,6 @@ flake8-bugbear==26.10.27
 flake8-commas==4.0.0
 flake8-comments==0.1.2
 flake8-comprehensions==3.17.0
-flake8-dunder-all==0.6.0
 flake8-import-order==0.19.2
 flake8-no-pep420==2.9.0
 Flake8-pyproject==1.2.4

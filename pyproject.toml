@@ -1,6 +1,6 @@
 [project]
 name = "datanar-django"
-version = "2.6.4"
+version = "2.6.6"
 description = "Сервис по сокращению ссылок на базе Django и Bootstrap"
 readme = "README.md"
 requires-python = ">=3.11,<3.16"
@@ -40,7 +40,6 @@ test = [
     "flake8-commas==4.0.0",
     "flake8-comments==0.1.2",
     "flake8-comprehensions==3.17.0",
-    "flake8-dunder-all==0.6.0",
     "flake8-import-order==0.19.2",
     "flake8-no-pep420==2.9.0",
     "flake8-pyproject==1.2.4",

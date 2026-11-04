@@ -173,28 +173,6 @@ wheels = [
 ]
 
 [[package]]
-name = "astatine"
-version = "0.3.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "asttokens" },
-    { name = "domdf-python-tools" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/a4/8a/544e058e5ed049cffd67006944872216c48e86b9004ceeefbb33a9759d3d/astatine-0.3.3.tar.gz", hash = "sha256:0c58a7844b5890ff16da07dbfeb187341d8324cb4378940f89d795cbebebce08", size = 6687, upload-time = "2023-08-15T10:38:28.151Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/1e/72/58e5d9b9965f55a1b652c7ea73dceedf4f8cea08d1310aa2d4102202acb8/astatine-0.3.3-py3-none-any.whl", hash = "sha256:6d8c914f01fbea252cb8f31563f2e766a9ab03c02b9bcc37d18f7d9138828401", size = 17376, upload-time = "2023-08-15T10:38:26.735Z" },
-]
-
-[[package]]
-name = "asttokens"
-version = "3.0.2"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/25/1e/faf0f247f6f881b98fc4d6d07e14085cb89d13665084e6d6ac1dc2c03d0b/asttokens-3.0.2.tar.gz", hash = "sha256:3ecdbd8f2cc195f53ccada3a613538bb5f9ef6f6869129f13e03c30a677b8fe2", size = 63136, upload-time = "2026-07-12T03:31:49.084Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/d4/2b/04b8a15f3a1c77bc79ddf5c73875327f34b4fa75982df2b76e45e402d364/asttokens-3.0.2-py3-none-any.whl", hash = "sha256:9da13157f5b28becde0bd374fc677dcd3c290614264eff096f167c469cd9f933", size = 28702, upload-time = "2026-07-12T03:31:47.542Z" },
-]
-
-[[package]]
 name = "async-timeout"
 version = "5.0.1"
 source = { registry = "https://pypi.org/simple" }
@@ -494,23 +472,8 @@ wheels = [
 ]
 
 [[package]]
-name = "consolekit"
-version = "2.0.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "click" },
-    { name = "domdf-python-tools" },
-    { name = "mistletoe" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/9b/a6/a851fc8a493f931e82a21cb2959108e7e42253cf33e280fc3db67f5232cf/consolekit-2.0.0.tar.gz", hash = "sha256:c25677cda6272368e0385e28ce5931ffc4db1f9d47dfc8b675874199282ded3e", size = 32321, upload-time = "2026-07-28T16:19:13.737Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/59/23/c80cb87e6e7a9803997d12e437cafd1096d167e248aeb15d4e11c0a707d2/consolekit-2.0.0-py3-none-any.whl", hash = "sha256:0f78503ff1adce952609c9a3985e438f00c43c27ebe4ed7c63da9e324e7f09f1", size = 46432, upload-time = "2026-07-28T16:19:12.686Z" },
-]
-
-[[package]]
 name = "datanar-django"
-version = "2.6.4"
+version = "2.6.6"
 source = { virtual = "." }
 dependencies = [
     { name = "antispam-link-shorteners" },
@@ -548,7 +511,6 @@ test = [
     { name = "flake8-commas" },
     { name = "flake8-comments" },
     { name = "flake8-comprehensions" },
-    { name = "flake8-dunder-all" },
     { name = "flake8-import-order" },
     { name = "flake8-no-pep420" },
     { name = "flake8-pyproject" },
@@ -593,7 +555,6 @@ test = [
     { name = "flake8-commas", specifier = "==4.0.0" },
     { name = "flake8-comments", specifier = "==0.1.2" },
     { name = "flake8-comprehensions", specifier = "==3.17.0" },
-    { name = "flake8-dunder-all", specifier = "==0.6.0" },
     { name = "flake8-import-order", specifier = "==0.19.2" },
     { name = "flake8-no-pep420", specifier = "==2.9.0" },
     { name = "flake8-pyproject", specifier = "==1.2.4" },
@@ -740,19 +701,6 @@ wheels = [
 ]
 
 [[package]]
-name = "domdf-python-tools"
-version = "3.10.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "natsort" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/36/8b/ab2d8a292bba8fe3135cacc8bfd3576710a14b8f2d0a8cde19130d5c9d21/domdf_python_tools-3.10.0.tar.gz", hash = "sha256:2ae308d2f4f1e9145f5f4ba57f840fbfd1c2983ee26e4824347789649d3ae298", size = 100458, upload-time = "2025-02-12T17:34:05.747Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5b/11/208f72084084d3f6a2ed5ebfdfc846692c3f7ad6dce65e400194924f7eed/domdf_python_tools-3.10.0-py3-none-any.whl", hash = "sha256:5e71c1be71bbcc1f881d690c8984b60e64298ec256903b3147f068bc33090c36", size = 126860, upload-time = "2025-02-12T17:34:04.093Z" },
-]
-
-[[package]]
 name = "et-xmlfile"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -834,23 +782,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/91/93/da2d30987ce4c06404326e7c8e6636cae18c2b2f2d5542891a8ad64a34f4/flake8_comprehensions-3.17.0.tar.gz", hash = "sha256:bf4fa102b2bf4d6c9e999e29e4b2724cbadffb70b937600fc782161be4dc0f4a", size = 13269, upload-time = "2025-09-09T22:37:18.335Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/39/bd/d6739d685fdd79349aa51c37bdedc0d8eab6ae9c6e6ed2ca935b3f88210d/flake8_comprehensions-3.17.0-py3-none-any.whl", hash = "sha256:3943a9c6f2593c3bc5cc64106c2f89d63c6ecd49c8343597f8257b8fcfc8b0a2", size = 8185, upload-time = "2025-09-09T22:37:17.149Z" },
-]
-
-[[package]]
-name = "flake8-dunder-all"
-version = "0.6.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "astatine" },
-    { name = "click" },
-    { name = "consolekit" },
-    { name = "domdf-python-tools" },
-    { name = "flake8" },
-    { name = "natsort" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/cd/76/86a99b3d0e77fb139515fc6358e97f0092a3b8c7d5633cdea406af40fc97/flake8_dunder_all-0.6.0.tar.gz", hash = "sha256:7a06bc1877c0b8d7f47829196d7b84daea12799dbc86e5ce9cbed3a94e45c606", size = 9926, upload-time = "2026-07-10T08:13:46.323Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/26/2d/34becf73d0755a058c6c7aa1adde069fba9a3788b71f8ac40991d4b01308/flake8_dunder_all-0.6.0-py3-none-any.whl", hash = "sha256:975173fab13c88cef4a04a488116d938fd4bc7e27449bd4e592fc174b72b7344", size = 12470, upload-time = "2026-07-10T08:13:45.429Z" },
 ]
 
 [[package]]
@@ -1156,15 +1087,6 @@ wheels = [
 ]
 
 [[package]]
-name = "mistletoe"
-version = "1.6.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/17/ea/ee6e364d62197e427f1d260500eac659a8855df207a77f74451658d749f3/mistletoe-1.6.0.tar.gz", hash = "sha256:92f066c4720a25fa24bf260e6413702bbff3a5b8a93af314cb6cd8589726a8e1", size = 113730, upload-time = "2026-07-11T14:14:18.593Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e0/5c/3681c676d79726e3b8b72bc78e83ac472b0c96e3c99b28d72b9470f12170/mistletoe-1.6.0-py3-none-any.whl", hash = "sha256:53f9dfb859e9b2d309915d0f06c3876253d1e24d568d0b728a32679eb4f0a187", size = 55931, upload-time = "2026-07-11T14:14:17.056Z" },
-]
-
-[[package]]
 name = "multidict"
 version = "6.9.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1329,15 +1251,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz", hash = "sha256:52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558", size = 6343, upload-time = "2025-04-22T14:54:24.164Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl", hash = "sha256:1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505", size = 4963, upload-time = "2025-04-22T14:54:22.983Z" },
-]
-
-[[package]]
-name = "natsort"
-version = "8.4.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/e2/a9/a0c57aee75f77794adaf35322f8b6404cbd0f89ad45c87197a937764b7d0/natsort-8.4.0.tar.gz", hash = "sha256:45312c4a0e5507593da193dedd04abb1469253b601ecaf63445ad80f0a1ea581", size = 76575, upload-time = "2023-06-20T04:17:19.925Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ef/82/7a9d0550484a62c6da82858ee9419f3dd1ccc9aa1c26a1e43da3ecd20b0d/natsort-8.4.0-py3-none-any.whl", hash = "sha256:4732914fb471f56b5cce04d7bae6f164a592c7712e1c85f9ef585e197299521c", size = 38268, upload-time = "2023-06-20T04:17:17.522Z" },
 ]
 
 [[package]]
