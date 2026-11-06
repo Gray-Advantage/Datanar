@@ -28,11 +28,12 @@ class ClickManager(models.Manager):
             .filter(redirect__short_link=short_link)
             .prefetch_related(Click.redirect.field.name)
             .only(
+                Click.os.field.name,
                 Click.browser.field.name,
                 Click.city.field.name,
                 Click.country.field.name,
+                Click.created_at.field.name,
                 f"{Click.redirect.field.name}_id",
-                Click.os.field.name,
             )
         )
 
