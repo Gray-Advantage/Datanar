@@ -142,7 +142,7 @@ class DownloadStatistic(View):
             ws.append(
                 [
                     number,
-                    click.clicked_at.replace(tzinfo=None),
+                    click.created_at.replace(tzinfo=None),
                     click.os,
                     click.browser,
                     click.country,
