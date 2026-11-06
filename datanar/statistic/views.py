@@ -23,11 +23,13 @@ from redirects.models import Redirect
 from statistic.models import Click
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from django.db.models import QuerySet
 
 
-def get_clicks_by_mode(short_link: str, mode: str) -> "QuerySet":
-    by_mode = {
+def get_clicks_by_mode(short_link: str, mode: str) -> "QuerySet[Click]":
+    by_mode: dict[str, Callable] = {
         "year": Click.objects.for_short_link_by_last_year,
         "month": Click.objects.for_short_link_by_last_month,
         "day": Click.objects.for_short_link_by_last_day,
@@ -39,8 +41,8 @@ def get_clicks_by_mode(short_link: str, mode: str) -> "QuerySet":
 class MyLinksView(
     LoginRequiredMixin,
     FormMethodExtender,
-    RedirectToLastPageMixin,
     ListView,
+    RedirectToLastPageMixin,
 ):
     template_name = "statistic/my_links.html"
     context_object_name = "links"
@@ -121,7 +123,7 @@ class DownloadStatistic(View):
         request: HttpRequest,
         link: str,
         period: str,
-    ) -> HttpResponse:
+    ) -> FileResponse:
         wb = openpyxl.Workbook()
         ws = wb.active
 
