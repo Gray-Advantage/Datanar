@@ -7,8 +7,8 @@ from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-VERSION = "2.6.5"
-API_VERSION = "1.2.0"
+VERSION = "2.6.6"
+API_VERSION = "1.2.1"
 
 SECRET_KEY = config(
     "DATANAR_SECRET_KEY",
@@ -155,7 +155,7 @@ DATABASES = {
 if not USE_FILE_DATABASE:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "ENGINE": "django.db.backends.postgresql",
             "NAME": config("DATANAR_DATABASE_NAME"),
             "USER": config("DATANAR_DATABASE_USER"),
             "PASSWORD": config("DATANAR_DATABASE_PASSWORD"),

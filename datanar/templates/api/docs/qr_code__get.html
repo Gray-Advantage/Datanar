@@ -100,7 +100,7 @@
 
 # {% trans "reminder_that_passwords_better_kept_in_separate_file" %}
 auth = requests.post(
-    "{{ server_url }}/api/v1/api-token-auth/",
+    "{{ server_url }}/api/api-token-auth/",
     data={
         "username": "user",
         "password": "very1secret3password!",
@@ -109,7 +109,7 @@ auth = requests.post(
 
 # {% trans "get_all_redirects_for_user" %}
 my_redirects = requests.get(
-    "{{ server_url }}/api/v1/redirects/",
+    "{{ server_url }}/api/redirects/",
     data={
         "token": auth.json()["token"]
     }

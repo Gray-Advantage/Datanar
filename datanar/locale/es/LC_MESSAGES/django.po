@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 00:56+0300\n"
+"POT-Creation-Date: 2026-11-05 14:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,373 +18,385 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\api\apps.py:8
+#: .\api\apps.py:10
 msgid "api"
 msgstr "API"
 
-#: .\api\views.py:147
+#: .\api\views.py:191
 msgid "This field is required."
 msgstr "Este campo es obligatorio"
 
-#: .\api\views.py:151
+#: .\api\views.py:195
 msgid "Enter a valid URL."
 msgstr "Introduzca una URL válida"
 
-#: .\api\views.py:155 .\redirects\forms.py:90 .\redirects\forms.py:103
+#: .\api\views.py:199 .\redirects\forms.py:76
 #: .\templates\api\docs\redirect__create.html:185
 msgid "this_url_is_blocked"
 msgstr "Esta URL está bloqueada"
 
-#: .\api\views.py:159 .\redirects\forms.py:84
+#: .\api\views.py:203 .\redirects\forms.py:68
 #: .\templates\api\docs\redirect__create.html:181
 msgid "custom_url_already_use"
 msgstr "Esta URL personalizada ya está en uso"
 
-#: .\core\apps.py:8
+#: .\core\apps.py:10
 msgid "base_forms"
 msgstr "Formas básicas"
 
-#: .\dashboard\apps.py:8 .\templates\includes\header.html:66
-msgid "dashboard"
-msgstr "Panel de Control"
+#: .\core\models.py:13
+msgid "Creation time"
+msgstr "Fecha de creación"
 
-#: .\dashboard\models.py:42 .\dashboard\models.py:48 .\dashboard\models.py:52
-msgid "domain_regex"
-msgstr "Dominio regular"
+#: .\core\models.py:14
+msgid "When the object was created."
+msgstr "Cuándo se creó el objeto."
 
-#: .\dashboard\models.py:43 .\templates\dashboard\black_list.html:18
-msgid "domain_regex_that_will_be_prohibited_from_shortening"
-msgstr "Una expresión regular para un dominio que no se puede acortar"
+#: .\core\models.py:18
+msgid "Update time"
+msgstr "Fecha de actualización"
 
-#: .\dashboard\models.py:49
-msgid "domains_regex"
-msgstr "Dominios regulares"
+#: .\core\models.py:19
+msgid "When the object was last updated."
+msgstr "Cuándo se actualizó el objeto por última vez."
 
-#: .\datanar\settings.py:215
-msgid "English"
-msgstr "English"
-
-#: .\datanar\settings.py:216
-msgid "Russian"
-msgstr "Русский"
-
-#: .\datanar\settings.py:217
-msgid "Ukrainian"
-msgstr "Українська"
-
-#: .\datanar\settings.py:218
-msgid "Bulgarian"
-msgstr "Български"
-
-#: .\datanar\settings.py:219
-msgid "German"
-msgstr "Deutsch"
-
-#: .\datanar\settings.py:220
-msgid "Spanish"
-msgstr "Español"
-
-#: .\datanar\settings.py:221
-msgid "French"
-msgstr "Français"
-
-#: .\datanar\settings.py:222
-msgid "Japanese"
-msgstr "日本語"
-
-#: .\homepage\apps.py:8
-msgid "homepage"
-msgstr "Página de inicio"
-
-#: .\qr_codes\apps.py:8
-msgid "qr-codes"
-msgstr "Códigos QR"
-
-#: .\redirects\admin.py:34 .\redirects\models.py:71
-#: .\templates\api\docs\redirect__create.html:95
-#: .\templates\api\docs\redirect__get.html:69
-#: .\templates\api\docs\redirect__get.html:258
-msgid "long_link"
-msgstr "enlace largo"
-
-#: .\redirects\admin.py:40
-msgid "block_selected_redirects"
-msgstr "Bloquear redirecciones seleccionadas"
-
-#: .\redirects\admin.py:53
-msgid "success_block_selected_redirect"
-msgstr "Redirecciones seleccionadas bloqueadas y eliminadas con éxito"
-
-#: .\redirects\admin.py:55
-msgid "deactivate_selected_redirects"
-msgstr "Desactivar redireccionamientos seleccionados"
-
-#: .\redirects\admin.py:61
-msgid "success_deactivate_selected_redirect"
-msgstr "Las redirecciones seleccionadas se han desactivado correctamente"
-
-#: .\redirects\admin.py:63
-msgid "activate_selected_redirects"
-msgstr "Activar los redireccionamientos seleccionados"
-
-#: .\redirects\admin.py:70
-msgid "success_activate_selected_redirect"
-msgstr "Las redirecciones seleccionadas se han activado correctamente"
-
-#: .\redirects\apps.py:8 .\redirects\models.py:137
-msgid "redirects"
-msgstr "Redirecciones"
-
-#: .\redirects\forms.py:31 .\templates\api\docs\redirect__create.html:43
-msgid "custom_url"
-msgstr "URL personalizada"
-
-#: .\redirects\forms.py:32
-msgid "custom_url_that_would_like_have_instead_generated_one"
-msgstr "URL personalizada que te gustaría tener en lugar de la generada."
-
-#: .\redirects\forms.py:79
-msgid "custom_url_should_not_have_slash"
-msgstr "El enlace personalizado no debe tener ‘/’"
-
-#: .\redirects\forms.py:167
-msgid "date_validity_invalid"
-msgstr "La fecha de caducidad no puede ser inferior a la fecha actual"
-
-#: .\redirects\forms.py:202 .\templates\api\docs\redirect__create.html:109
-#: .\templates\api\docs\redirect__get.html:85
-#: .\templates\api\docs\redirect__get.html:272
-#: .\templates\api\docs\token__create.html:36
-#: .\templates\api\docs\token__get.html:36
-#: .\templates\statistic\link_detail.html:27
-#: .\templates\statistic\link_detail.html:54
-msgid "Password"
-msgstr "Contraseña"
-
-#: .\redirects\forms.py:203
-msgid "password_before_redirect"
-msgstr "Introduce la contraseña antes de la redirección"
-
-#: .\redirects\models.py:60
+#: .\core\models.py:31
 msgid "user"
 msgstr "usuario"
 
-#: .\redirects\models.py:61
+#: .\core\models.py:32
 msgid "user_who_create_bond"
 msgstr "Usuario que creó el enlace entre el enlace corto y largo"
 
-#: .\redirects\models.py:65 .\templates\api\docs\qr_code__get.html:36
+#: .\core\models.py:37 .\templates\includes\footer.html:19
+msgid "API"
+msgstr "API"
+
+#: .\core\models.py:38
+msgid "Web"
+msgstr "Web"
+
+#: .\core\models.py:39
+msgid "Web (file)"
+msgstr "Archivo"
+
+#: .\core\models.py:42
+msgid "create_method"
+msgstr "método de creación"
+
+#: .\core\models.py:43 .\templates\api\docs\redirect__create.html:137
+#: .\templates\api\docs\redirect__get.html:117
+#: .\templates\api\docs\redirect__get.html:300
+msgid "method_which_redirect_was_created"
+msgstr "Método de creación de la redirección"
+
+#: .\core\models.py:55 .\templates\api\docs\qr_code__get.html:36
 #: .\templates\api\docs\redirect__create.html:102
 #: .\templates\api\docs\redirect__get.html:77
 #: .\templates\api\docs\redirect__get.html:265
 msgid "short_link"
 msgstr "enlace corto"
 
-#: .\redirects\models.py:66
+#: .\core\models.py:56
 msgid "shorten_link_to_redirect_to_resource"
 msgstr ""
 "Enlace acortado por el cual se realizará la redirección al recurso final"
 
-#: .\redirects\models.py:72 .\templates\api\docs\redirect__create.html:36
-msgid "resource_to_which_short_link_lead"
-msgstr "Recurso final al que llevará el enlace corto"
-
-#: .\redirects\models.py:76 .\templates\api\docs\redirect__create.html:130
-#: .\templates\api\docs\redirect__get.html:109
-#: .\templates\api\docs\redirect__get.html:293
-msgid "creation_time"
-msgstr "tiempo de creación"
-
-#: .\redirects\models.py:77
-msgid "when_bond_was_create"
-msgstr "Cuándo se creó el enlace entre el enlace corto y largo"
-
-#: .\redirects\models.py:81
-msgid "password"
-msgstr "contraseña"
-
-#: .\redirects\models.py:82 .\templates\api\docs\redirect__create.html:50
-msgid "password_that_will_requested_to_redirect"
-msgstr "Contraseña que se solicitará antes de la redirección"
-
-#: .\redirects\models.py:88 .\templates\api\docs\redirect__create.html:116
+#: .\core\models.py:62 .\templates\api\docs\redirect__create.html:116
 #: .\templates\api\docs\redirect__get.html:93
 #: .\templates\api\docs\redirect__get.html:279
 msgid "valid_day_number"
 msgstr "fecha de caducidad"
 
-#: .\redirects\models.py:89 .\templates\api\docs\redirect__create.html:57
+#: .\core\models.py:63 .\templates\api\docs\redirect__create.html:57
 msgid "how_many_day_link_will_be_valid"
 msgstr "Cuántos días será válida el enlace antes de su desactivación"
 
-#: .\redirects\models.py:95 .\templates\api\docs\redirect__create.html:123
+#: .\core\models.py:69 .\templates\api\docs\redirect__create.html:123
 #: .\templates\api\docs\redirect__get.html:101
 #: .\templates\api\docs\redirect__get.html:286
 msgid "valid_click_number"
 msgstr "cantidad válida de redirecciones"
 
-#: .\redirects\models.py:96 .\templates\api\docs\redirect__create.html:64
+#: .\core\models.py:70 .\templates\api\docs\redirect__create.html:64
 msgid "how_many_click_on_link_will_be_valid"
 msgstr ""
 "Cuántas redirecciones se pueden hacer en el enlace antes de su desactivación"
 
-#: .\redirects\models.py:102
+#: .\core\models.py:76
 msgid "active"
 msgstr "activo"
 
-#: .\redirects\models.py:103 .\templates\api\docs\redirect__create.html:144
+#: .\core\models.py:77 .\templates\api\docs\redirect__create.html:144
 #: .\templates\api\docs\redirect__get.html:125
 #: .\templates\api\docs\redirect__get.html:307
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "is_active"
 msgstr "La redirección está activa ahora"
 
-#: .\redirects\models.py:107 .\templates\api\docs\redirect__create.html:151
+#: .\core\models.py:81 .\templates\api\docs\redirect__create.html:151
 #: .\templates\api\docs\redirect__get.html:133
 #: .\templates\api\docs\redirect__get.html:314
 msgid "deactivation_time"
 msgstr "tiempo de desactivación"
 
-#: .\redirects\models.py:108
+#: .\core\models.py:82
 msgid "when_bond_was_deactivated"
 msgstr "Cuando se desactivó la redirección"
 
-#: .\redirects\models.py:113
+#: .\dashboard\apps.py:10 .\templates\includes\header.html:72
+msgid "dashboard"
+msgstr "Panel de Control"
+
+#: .\dashboard\models.py:45 .\dashboard\models.py:53 .\dashboard\models.py:57
+msgid "domain_regex"
+msgstr "Dominio regular"
+
+#: .\dashboard\models.py:46 .\templates\dashboard\black_list.html:18
+msgid "domain_regex_that_will_be_prohibited_from_shortening"
+msgstr "Una expresión regular para un dominio que no se puede acortar"
+
+#: .\dashboard\models.py:54
+msgid "domains_regex"
+msgstr "Dominios regulares"
+
+#: .\datanar\settings.py:241
+msgid "English"
+msgstr "English"
+
+#: .\datanar\settings.py:242
+msgid "Russian"
+msgstr "Русский"
+
+#: .\datanar\settings.py:243
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: .\datanar\settings.py:244
+msgid "Bulgarian"
+msgstr "Български"
+
+#: .\datanar\settings.py:245
+msgid "German"
+msgstr "Deutsch"
+
+#: .\datanar\settings.py:246
+msgid "Spanish"
+msgstr "Español"
+
+#: .\datanar\settings.py:247
+msgid "French"
+msgstr "Français"
+
+#: .\datanar\settings.py:248
+msgid "Japanese"
+msgstr "日本語"
+
+#: .\homepage\apps.py:10
+msgid "homepage"
+msgstr "Página de inicio"
+
+#: .\qr_codes\apps.py:10
+msgid "qr-codes"
+msgstr "Códigos QR"
+
+#: .\redirects\admin.py:46
+msgid "block_selected_redirects"
+msgstr "Bloquear redirecciones seleccionadas"
+
+#: .\redirects\admin.py:76
+msgid "success_block_selected_redirect"
+msgstr "Redirecciones seleccionadas bloqueadas y eliminadas con éxito"
+
+#: .\redirects\admin.py:78
+msgid "deactivate_selected_redirects"
+msgstr "Desactivar redireccionamientos seleccionados"
+
+#: .\redirects\admin.py:88
+msgid "success_deactivate_selected_redirect"
+msgstr "Las redirecciones seleccionadas se han desactivado correctamente"
+
+#: .\redirects\admin.py:90
+msgid "activate_selected_redirects"
+msgstr "Activar los redireccionamientos seleccionados"
+
+#: .\redirects\admin.py:101
+msgid "success_activate_selected_redirect"
+msgstr "Las redirecciones seleccionadas se han activado correctamente"
+
+#: .\redirects\apps.py:10 .\redirects\models.py:66
+msgid "redirects"
+msgstr "Redirecciones"
+
+#: .\redirects\forms.py:20 .\templates\api\docs\redirect__create.html:43
+msgid "custom_url"
+msgstr "URL personalizada"
+
+#: .\redirects\forms.py:21
+msgid "custom_url_that_would_like_have_instead_generated_one"
+msgstr "URL personalizada que te gustaría tener en lugar de la generada."
+
+#: .\redirects\forms.py:63
+msgid "custom_url_should_not_have_slash"
+msgstr "El enlace personalizado no debe tener ‘/’"
+
+#: .\redirects\forms.py:124
+msgid "date_validity_invalid"
+msgstr "La fecha de caducidad no puede ser inferior a la fecha actual"
+
+#: .\redirects\forms.py:147 .\templates\api\docs\redirect__create.html:109
+#: .\templates\api\docs\redirect__get.html:85
+#: .\templates\api\docs\redirect__get.html:272
+#: .\templates\api\docs\token__create.html:36
+#: .\templates\api\docs\token__get.html:36
+#: .\templates\statistic\link_detail.html:23
+#: .\templates\statistic\link_detail.html:50
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\redirects\forms.py:148
+msgid "password_before_redirect"
+msgstr "Introduce la contraseña antes de la redirección"
+
+#: .\redirects\models.py:43 .\templates\api\docs\redirect__create.html:95
+#: .\templates\api\docs\redirect__get.html:69
+#: .\templates\api\docs\redirect__get.html:258
+msgid "long_link"
+msgstr "enlace largo"
+
+#: .\redirects\models.py:44 .\templates\api\docs\redirect__create.html:36
+msgid "resource_to_which_short_link_lead"
+msgstr "Recurso final al que llevará el enlace corto"
+
+#: .\redirects\models.py:48
+msgid "password"
+msgstr "contraseña"
+
+#: .\redirects\models.py:49 .\templates\api\docs\redirect__create.html:50
+msgid "password_that_will_requested_to_redirect"
+msgstr "Contraseña que se solicitará antes de la redirección"
+
+#: .\redirects\models.py:55
 msgid "ip_address"
 msgstr "Dirección IP"
 
-#: .\redirects\models.py:114
+#: .\redirects\models.py:56
 msgid "client_ip_address_who_created_redirect"
 msgstr "Dirección IP desde la que se creó la redirección"
 
-#: .\redirects\models.py:121 .\templates\includes\footer.html:9
-msgid "API"
-msgstr "API"
-
-#: .\redirects\models.py:122
-msgid "Web"
-msgstr "Web"
-
-#: .\redirects\models.py:123
-msgid "Web_by_file"
-msgstr "Archivo"
-
-#: .\redirects\models.py:126
-msgid "create_method"
-msgstr "método de creación"
-
-#: .\redirects\models.py:127 .\templates\api\docs\redirect__create.html:137
-#: .\templates\api\docs\redirect__get.html:117
-#: .\templates\api\docs\redirect__get.html:300
-msgid "method_which_redirect_was_created"
-msgstr "Método de creación de la redirección"
-
-#: .\redirects\models.py:136 .\redirects\models.py:140
+#: .\redirects\models.py:65 .\redirects\models.py:69
 msgid "redirect"
 msgstr "redirección"
 
-#: .\redirects\views.py:46
+#: .\redirects\views.py:68
 msgid "invalid_password"
 msgstr "Contraseña incorrecta"
 
-#: .\statistic\apps.py:9 .\templates\includes\link_card.html:13
+#: .\statistic\apps.py:11 .\templates\includes\link_card.html:13
 msgid "statistic"
 msgstr "Estadísticas"
 
-#: .\statistic\models.py:44
-msgid "redirect_time"
-msgstr "Tiempo de redirección"
-
-#: .\statistic\models.py:51
+#: .\statistic\models.py:67
 msgid "os"
 msgstr "so"
 
-#: .\statistic\models.py:52
+#: .\statistic\models.py:68
 msgid "operating_system_from_which_redirect_was_made"
 msgstr "Sistema operativo desde el cual se realizó la redirección"
 
-#: .\statistic\models.py:56
+#: .\statistic\models.py:73
 msgid "browser"
 msgstr "navegador"
 
-#: .\statistic\models.py:57
+#: .\statistic\models.py:74
 msgid "browser_from_which_redirect_was_made"
 msgstr "Navegador desde el cual se realizó la redirección"
 
-#: .\statistic\models.py:60
+#: .\statistic\models.py:79
 msgid "country"
 msgstr "país"
 
-#: .\statistic\models.py:61
+#: .\statistic\models.py:80
+msgid "country_from_which_redirect_was_made"
+msgstr "País desde el cual se realizó la redirección"
+
+#: .\statistic\models.py:85
 msgid "city"
 msgstr "ciudad"
 
-#: .\statistic\views.py:96
+#: .\statistic\models.py:86
+msgid "city_from_which_redirect_was_made"
+msgstr "Ciudad desde la cual se realizó la redirección"
+
+#: .\statistic\models.py:94
+msgid "click"
+msgstr "clic"
+
+#: .\statistic\models.py:95
+msgid "clicks"
+msgstr "clics"
+
+#: .\statistic\views.py:110
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: .\statistic\views.py:108
+#: .\statistic\views.py:130
 msgid "Created"
 msgstr "Creado"
 
-#: .\statistic\views.py:109 .\templates\statistic\link_detail.html:85
+#: .\statistic\views.py:131 .\templates\statistic\link_detail.html:80
 msgid "OS"
 msgstr "SO"
 
-#: .\statistic\views.py:110
+#: .\statistic\views.py:132
 msgid "Browser"
 msgstr "Navegador"
 
-#: .\statistic\views.py:111
+#: .\statistic\views.py:133
 msgid "Country"
 msgstr "País"
 
-#: .\statistic\views.py:112
+#: .\statistic\views.py:134
 msgid "City"
 msgstr "Ciudad"
 
-#: .\templates\403.html:5 .\templates\404.html:5 .\templates\500.html:5
-msgid "oops"
-msgstr "¡Ups!"
-
-#: .\templates\403.html:11
+#: .\templates\403.html:5
 msgid "access_denied"
 msgstr "Acceso denegado"
 
-#: .\templates\403.html:13 .\templates\404.html:13 .\templates\500.html:13
-#: .\templates\users\password_change_done.html:12
-#: .\templates\users\password_reset_complete.html:12
-#: .\templates\users\password_reset_done.html:12
-msgid "to_main"
-msgstr "A la página principal"
-
-#: .\templates\404.html:11
+#: .\templates\404.html:5
 msgid "page_not_found"
 msgstr "Página no encontrada"
 
-#: .\templates\500.html:11
+#: .\templates\500.html:5
 msgid "server_error"
 msgstr "Error del servidor"
 
 #: .\templates\account\email\account_already_exists_message.txt:4
 #, python-format
 msgid ""
-"You are receiving this email because you or someone else tried to signup for an\n"
+"You are receiving this email because you or someone else tried to signup for "
+"an\n"
 "account using email address:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"However, an account using that email address already exists.  In case you have\n"
-"forgotten about this, please use the password forgotten procedure to recover\n"
+"However, an account using that email address already exists.  In case you "
+"have\n"
+"forgotten about this, please use the password forgotten procedure to "
+"recover\n"
 "your account:\n"
 "\n"
 "%(password_reset_url)s"
 msgstr ""
-"Recibiste este correo porque tú o alguien más intentó registrarse en el sitio usando la dirección de correo electrónico:\n"
+"Recibiste este correo porque tú o alguien más intentó registrarse en el "
+"sitio usando la dirección de correo electrónico:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"Sin embargo, ya existe una cuenta con esta dirección de correo electrónico. Si olvidaste esto, por favor, utiliza el procedimiento de recuperación de contraseña para recuperar tu cuenta:\n"
+"Sin embargo, ya existe una cuenta con esta dirección de correo electrónico. "
+"Si olvidaste esto, por favor, utiliza el procedimiento de recuperación de "
+"contraseña para recuperar tu cuenta:\n"
 "\n"
 "%(password_reset_url)s"
 
@@ -409,11 +421,13 @@ msgstr ""
 #: .\templates\account\email\email_confirmation_message.txt:5
 #, python-format
 msgid ""
-"You're receiving this email because user %(user_display)s has given your email address to register an account on %(site_domain)s.\n"
+"You're receiving this email because user %(user_display)s has given your "
+"email address to register an account on %(site_domain)s.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s"
 msgstr ""
-"Recibiste este correo porque el usuario %(user_display)s indicó tu dirección de correo electrónico para registrar una cuenta en %(site_domain)s.\n"
+"Recibiste este correo porque el usuario %(user_display)s indicó tu dirección "
+"de correo electrónico para registrar una cuenta en %(site_domain)s.\n"
 "\n"
 "Para confirmar que esto es correcto, ve a la dirección %(activate_url)s"
 
@@ -423,11 +437,15 @@ msgstr "Por favor, confirma tu dirección de correo electrónico"
 
 #: .\templates\account\email\password_reset_key_message.txt:4
 msgid ""
-"You're receiving this email because you or someone else has requested a password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+"You're receiving this email because you or someone else has requested a "
+"password reset for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
 msgstr ""
-"Recibiste este correo porque tú o alguien más solicitó un restablecimiento de contraseña para tu cuenta.\n"
-"Puedes ignorarlo de manera segura si no solicitaste un restablecimiento de contraseña. Haz clic en el enlace de abajo para restablecer tu contraseña."
+"Recibiste este correo porque tú o alguien más solicitó un restablecimiento "
+"de contraseña para tu cuenta.\n"
+"Puedes ignorarlo de manera segura si no solicitaste un restablecimiento de "
+"contraseña. Haz clic en el enlace de abajo para restablecer tu contraseña."
 
 #: .\templates\account\email\password_reset_key_message.txt:9
 #, python-format
@@ -444,7 +462,8 @@ msgstr "Correo para restablecer la contraseña"
 #, python-format
 msgid ""
 "You are receiving this email because you or someone else has requested a\n"
-"password for your user account. However, we do not have any record of a user\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
 "with email %(email)s in our database.\n"
 "\n"
 "This mail can be safely ignored if you did not request a password reset.\n"
@@ -452,10 +471,12 @@ msgid ""
 "If it was you, you can sign up for an account using the link below."
 msgstr ""
 "Estás recibiendo este correo porque tú o alguien más solicitó\n"
-"un restablecimiento de contraseña para tu cuenta. Sin embargo, no tenemos ningún registro de un usuario\n"
+"un restablecimiento de contraseña para tu cuenta. Sin embargo, no tenemos "
+"ningún registro de un usuario\n"
 "con la dirección de correo electrónico %(email)s en nuestra base de datos.\n"
 "\n"
-"Puedes ignorar este correo de manera segura si no solicitaste un restablecimiento de contraseña.\n"
+"Puedes ignorar este correo de manera segura si no solicitaste un "
+"restablecimiento de contraseña.\n"
 "\n"
 "Si fuiste tú, puedes registrarte en el sitio utilizando el enlace de abajo."
 
@@ -519,8 +540,8 @@ msgid "API_description_in_preamble"
 msgstr ""
 "El servicio ofrece funciones básicas para todos los usuarios sin necesidad "
 "de registrarse y utilizar un token, mientras que las funciones avanzadas "
-"están disponibles para los usuarios registrados y sólo mediante un token que"
-" puede obtenerse tras el registro."
+"están disponibles para los usuarios registrados y sólo mediante un token que "
+"puede obtenerse tras el registro."
 
 #: .\templates\api\docs\qr_code__get.html:9
 msgid "get_qr_code_by_redirect"
@@ -667,7 +688,7 @@ msgstr "Descripción"
 #: .\templates\api\docs\token__get.html:28
 #: .\templates\api\docs\token__get.html:35
 #: .\templates\api\docs\token__get.html:59
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "yes"
 msgstr "Sí"
 
@@ -776,8 +797,8 @@ msgid "redirect__create_api_docs"
 msgstr ""
 "La ruta principal de la API es crear una redirección. Si no utiliza un "
 "token, puede crear simplemente una redirección y un enlace personalizado si "
-"lo desea. Con un token, la redirección se guardará en el perfil del usuario,"
-" y puedes establecer atributos adicionales al crear una redirección"
+"lo desea. Con un token, la redirección se guardará en el perfil del usuario, "
+"y puedes establecer atributos adicionales al crear una redirección"
 
 #: .\templates\api\docs\redirect__create.html:28
 #: .\templates\api\docs\redirect__create.html:42
@@ -788,7 +809,7 @@ msgstr ""
 #: .\templates\api\docs\redirect__create.html:136
 #: .\templates\api\docs\redirect__create.html:143
 #: .\templates\api\docs\redirect__create.html:150
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "no"
 msgstr "no"
 
@@ -818,6 +839,12 @@ msgstr "Disponible con ficha"
 #: .\templates\api\docs\redirect__get.html:251
 msgid "Redirect id"
 msgstr "ID de redirección"
+
+#: .\templates\api\docs\redirect__create.html:130
+#: .\templates\api\docs\redirect__get.html:109
+#: .\templates\api\docs\redirect__get.html:293
+msgid "creation_time"
+msgstr "tiempo de creación"
 
 #: .\templates\api\docs\redirect__create.html:169
 msgid "success_created_redirect"
@@ -895,6 +922,17 @@ msgstr ""
 "En esta ruta, puede crear un Token si aún no tiene uno, o readquirir uno "
 "existente si lo ha perdido."
 
+#: .\templates\base_error.html:5
+msgid "oops"
+msgstr "¡Ups!"
+
+#: .\templates\base_error.html:13
+#: .\templates\users\password_change_done.html:12
+#: .\templates\users\password_reset_complete.html:12
+#: .\templates\users\password_reset_done.html:12
+msgid "to_main"
+msgstr "A la página principal"
+
 #: .\templates\dashboard\all_links.html:5
 msgid "title__dashboard__all_links"
 msgstr "Todos los enlaces"
@@ -911,7 +949,7 @@ msgstr "Lista negra de dominios"
 msgid "server_logs"
 msgstr "Registros del servidor"
 
-#: .\templates\dashboard\base.html:27 .\templates\includes\header.html:69
+#: .\templates\dashboard\base.html:27 .\templates\includes\header.html:75
 msgid "admin_panel"
 msgstr "Panel de admin"
 
@@ -931,7 +969,7 @@ msgstr "Modificar"
 
 #: .\templates\dashboard\black_list.html:20
 #: .\templates\dashboard\includes\blocked_domain_modal_delete.html:19
-#: .\templates\includes\link_card.html:17
+#: .\templates\includes\link_card.html:18
 #: .\templates\qr_codes\QR_modal_delete.html:19
 msgid "Delete"
 msgstr "Eliminar"
@@ -945,7 +983,7 @@ msgstr "Añadir un dominio bloqueado"
 #: .\templates\dashboard\includes\blocked_domain_modal_delete.html:14
 #: .\templates\dashboard\log.html:33
 #: .\templates\qr_codes\QR_modal_delete.html:14
-#: .\templates\users\email_change.html:29
+#: .\templates\users\email_change.html:52
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -977,7 +1015,7 @@ msgstr "Renovar"
 msgid "clear_log"
 msgstr "Borra el registro"
 
-#: .\templates\homepage\about.html:5 .\templates\includes\footer.html:8
+#: .\templates\homepage\about.html:5 .\templates\includes\footer.html:14
 msgid "about"
 msgstr "Sobre el proyecto"
 
@@ -985,8 +1023,8 @@ msgstr "Sobre el proyecto"
 msgid "about_beginning"
 msgstr ""
 "Datanar es un servicio web para acortar enlaces. Con nuestro sitio, puedes "
-"acortar fácilmente las URL largas, haciéndolas más convenientes y simples de"
-" usar."
+"acortar fácilmente las URL largas, haciéndolas más convenientes y simples de "
+"usar."
 
 #: .\templates\homepage\about.html:17
 msgid "about_you_can_do"
@@ -1032,23 +1070,23 @@ msgstr "Conectar tu servicio con el nuestro a través de API"
 msgid "about_using"
 msgstr "El sitio está hecho con:"
 
-#: .\templates\homepage\about.html:50
+#: .\templates\homepage\about.html:51
 msgid "developers"
 msgstr "Desarrolladores - estas maravillosas personas:"
 
-#: .\templates\homepage\about.html:56
+#: .\templates\homepage\about.html:57
 msgid "sergey"
 msgstr "Andréyev Serguéi"
 
-#: .\templates\homepage\about.html:62
+#: .\templates\homepage\about.html:63
 msgid "vladimir"
 msgstr "Klímenko Vladímir"
 
-#: .\templates\homepage\about.html:68
+#: .\templates\homepage\about.html:69
 msgid "artem"
 msgstr "Tretiakov Artiom"
 
-#: .\templates\homepage\about.html:74
+#: .\templates\homepage\about.html:75
 msgid "github_project"
 msgstr "Proyecto en GitHub"
 
@@ -1056,43 +1094,42 @@ msgstr "Proyecto en GitHub"
 msgid "title__homepage"
 msgstr "Datanar - Acortamiento de enlaces"
 
-#: .\templates\homepage\main.html:28
+#: .\templates\homepage\main.html:33
 msgid "short_description_under_logo"
 msgstr "Acorta tu enlace para que tus clientes no tengan que ver largas URL."
 
-#: .\templates\homepage\main.html:30
+#: .\templates\homepage\main.html:35
 msgid "short_description_about_supported_files"
 msgstr ""
 "Puedes seleccionar o arrastrar un archivo con extensión .txt/.xlsx. En txt "
 "cada línea se considera como un enlace, y en xlsx cada línea de la primera "
 "columna"
 
-#: .\templates\homepage\main.html:40
+#: .\templates\homepage\main.html:45
 msgid "label_link_file"
 msgstr "Archivo seleccionado con enlaces"
 
-#: .\templates\homepage\main.html:44
+#: .\templates\homepage\main.html:49
 msgid "delete_file"
 msgstr "Eliminar archivo"
 
-#: .\templates\homepage\main.html:46
+#: .\templates\homepage\main.html:51
 msgid "choose_file"
 msgstr "Seleccionar archivo"
 
-#: .\templates\homepage\main.html:48
+#: .\templates\homepage\main.html:53
 msgid "shorten"
 msgstr "Acortar"
 
-#: .\templates\homepage\main.html:68
+#: .\templates\homepage\main.html:73
 msgid "message_error_count"
 msgstr "Por favor, arrastra solo un archivo."
 
-#: .\templates\homepage\main.html:69
+#: .\templates\homepage\main.html:74
 msgid "message_error_type"
 msgstr "Por favor, arrastra un archivo con extensión .xlsx o .txt."
 
-#: .\templates\homepage\service_rules.html:5
-#: .\templates\includes\footer.html:7
+#: .\templates\homepage\service_rules.html:5 .\templates\includes\footer.html:9
 msgid "service_rules"
 msgstr "Reglas del servicio"
 
@@ -1112,15 +1149,15 @@ msgid "rule_1"
 msgstr ""
 "1. Para crear una cuenta, recopilamos el correo electrónico, el nombre de "
 "usuario y la contraseña del usuario. Respetamos tu privacidad. Todos los "
-"datos personales se utilizan exclusivamente para gestionar tu cuenta y no se"
-" comparten con terceros."
+"datos personales se utilizan exclusivamente para gestionar tu cuenta y no se "
+"comparten con terceros."
 
 #: .\templates\homepage\service_rules.html:17
 msgid "rule_2"
 msgstr ""
 "2. Tomamos todas las medidas de seguridad posibles para proteger tus datos. "
-"Tu contraseña se almacena en forma encriptada. Recomendamos usar contraseñas"
-" complejas y no compartirlas con otros."
+"Tu contraseña se almacena en forma encriptada. Recomendamos usar contraseñas "
+"complejas y no compartirlas con otros."
 
 #: .\templates\homepage\service_rules.html:18
 msgid "rule_3"
@@ -1141,58 +1178,46 @@ msgstr ""
 "¡Gracias por elegir Datanar! Apreciamos tu confianza y nos esforzamos por "
 "ofrecerte un servicio de acortamiento de enlaces cómodo y seguro."
 
-#: .\templates\includes\header.html:15
+#: .\templates\includes\header.html:14
 msgid "theme"
 msgstr "Tema"
 
-#: .\templates\includes\header.html:21
+#: .\templates\includes\header.html:20
 msgid "light"
 msgstr "Claro"
 
-#: .\templates\includes\header.html:27
+#: .\templates\includes\header.html:26
 msgid "dark"
 msgstr "Oscuro"
 
-#: .\templates\includes\header.html:33
+#: .\templates\includes\header.html:32
 msgid "auto"
 msgstr "Auto"
 
-#: .\templates\includes\header.html:54
+#: .\templates\includes\header.html:60
 msgid "no_user"
 msgstr "No hay nombre de usuario"
 
-#: .\templates\includes\header.html:61 .\templates\users\profile.html:5
+#: .\templates\includes\header.html:67 .\templates\users\profile.html:5
 #: .\templates\users\profile.html:12
 msgid "my_profile"
 msgstr "Mi perfil"
 
-#: .\templates\includes\header.html:62
+#: .\templates\includes\header.html:68
 msgid "my_links"
 msgstr "Mis enlaces"
 
-#: .\templates\includes\header.html:73
+#: .\templates\includes\header.html:79
 msgid "exit"
 msgstr "Cerrar sesión"
 
-#: .\templates\includes\header.html:78 .\templates\users\login.html:13
+#: .\templates\includes\header.html:84 .\templates\users\login.html:9
 msgid "sign_in"
 msgstr "Entrar"
 
-#: .\templates\includes\header.html:81 .\templates\users\signup.html:5
+#: .\templates\includes\header.html:87 .\templates\users\signup.html:5
 msgid "registration"
 msgstr "Registro"
-
-#: .\templates\includes\user_form.html:50
-msgid "dont_have_account_yet"
-msgstr "¿Aún no tienes una cuenta?"
-
-#: .\templates\includes\user_form.html:50
-msgid "create_it"
-msgstr "¡Créala!"
-
-#: .\templates\includes\user_form.html:51
-msgid "forgot_password"
-msgstr "¿Olvidaste tu contraseña?"
 
 #: .\templates\redirect\redirect.html:4
 msgid "redirect_page"
@@ -1202,88 +1227,88 @@ msgstr "Redirección"
 msgid "title__link_detail"
 msgstr "Enlace - estadísticas"
 
-#: .\templates\statistic\link_detail.html:18
+#: .\templates\statistic\link_detail.html:14
 msgid "link"
 msgstr "Enlace"
 
-#: .\templates\statistic\link_detail.html:19
+#: .\templates\statistic\link_detail.html:15
 msgid "original"
 msgstr "Original"
 
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "after_10_days_deactivate_redirect_will_be_delete"
 msgstr ""
 "Transcurridos 10 días desde la desactivación, se eliminarán los "
 "redireccionamientos"
 
-#: .\templates\statistic\link_detail.html:24
-#: .\templates\statistic\link_detail.html:42
+#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:38
 msgid "created"
 msgstr "Creado"
 
-#: .\templates\statistic\link_detail.html:25
-#: .\templates\statistic\link_detail.html:46
+#: .\templates\statistic\link_detail.html:21
+#: .\templates\statistic\link_detail.html:42
 msgid "transitions_are_available"
 msgstr "Redirecciones disponibles"
 
-#: .\templates\statistic\link_detail.html:26
-#: .\templates\statistic\link_detail.html:50
+#: .\templates\statistic\link_detail.html:22
+#: .\templates\statistic\link_detail.html:46
 msgid "valid_for_days"
 msgstr "Válido días"
 
-#: .\templates\statistic\link_detail.html:33
-#: .\templates\statistic\link_detail.html:34
+#: .\templates\statistic\link_detail.html:29
+#: .\templates\statistic\link_detail.html:30
+#: .\templates\statistic\link_detail.html:43
 #: .\templates\statistic\link_detail.html:47
-#: .\templates\statistic\link_detail.html:51
 msgid "unlimited"
 msgstr "Ilimitado"
 
-#: .\templates\statistic\link_detail.html:35
-#: .\templates\statistic\link_detail.html:55
+#: .\templates\statistic\link_detail.html:31
+#: .\templates\statistic\link_detail.html:51
 msgid "absent"
 msgstr "Ausente"
 
-#: .\templates\statistic\link_detail.html:60
+#: .\templates\statistic\link_detail.html:56
 msgid "statistics_for"
 msgstr "Estadísticas para"
 
-#: .\templates\statistic\link_detail.html:61
+#: .\templates\statistic\link_detail.html:57
 msgid "day"
 msgstr "día"
 
-#: .\templates\statistic\link_detail.html:62
+#: .\templates\statistic\link_detail.html:58
 msgid "month"
 msgstr "mes"
 
-#: .\templates\statistic\link_detail.html:63
+#: .\templates\statistic\link_detail.html:59
 msgid "year"
 msgstr "año"
 
-#: .\templates\statistic\link_detail.html:64
+#: .\templates\statistic\link_detail.html:60
 msgid "all_time"
 msgstr "todo el tiempo"
 
-#: .\templates\statistic\link_detail.html:66
+#: .\templates\statistic\link_detail.html:62
 msgid "total_number_of_clicks_during_the_period"
 msgstr "Cantidad total de redirecciones para el período"
 
-#: .\templates\statistic\link_detail.html:71
+#: .\templates\statistic\link_detail.html:72
 msgid "Browsers"
 msgstr "Navegadores"
 
-#: .\templates\statistic\link_detail.html:99
+#: .\templates\statistic\link_detail.html:88
 msgid "Countries"
 msgstr "Países"
 
-#: .\templates\statistic\link_detail.html:113
+#: .\templates\statistic\link_detail.html:96
 msgid "Cities"
 msgstr "Ciudades"
 
-#: .\templates\statistic\link_detail.html:125
+#: .\templates\statistic\link_detail.html:102
 msgid "ip_geo_by_DB-IP"
 msgstr "Geolocalización IP de DB-IP"
 
-#: .\templates\statistic\link_detail.html:126
+#: .\templates\statistic\link_detail.html:104
 msgid "download_statistics_for_the_period"
 msgstr "Descargar estadísticas para el período"
 
@@ -1314,8 +1339,8 @@ msgid ""
 "address for user %(user_display)s."
 msgstr ""
 "Por favor confirma que <a href=\"mailto:%(email)s\">%(email)s</a> es la "
-"dirección de correo electrónico para el usuario "
-"<strong>%(user_display)s</strong>."
+"dirección de correo electrónico para el usuario <strong>%(user_display)s</"
+"strong>."
 
 #: .\templates\users\confirm_email_from_sent.html:26
 msgid "Confirm"
@@ -1339,23 +1364,51 @@ msgstr ""
 "El plazo de validez de este enlace de confirmación ha expirado o es "
 "inválido. <a href=\"%(email_url)s\">Por favor, solicita una nueva.</a>."
 
-#: .\templates\users\email_change.html:8
+#: .\templates\users\email_change.html:4 .\templates\users\email_change.html:9
 msgid "email_change"
 msgstr "Cambio de correo"
 
+#: .\templates\users\email_change.html:21
+msgid "Current email"
+msgstr "Correo electrónico actual"
+
 #: .\templates\users\email_change.html:28
+msgid "Changing to"
+msgstr "Cambiando a"
+
+#: .\templates\users\email_change.html:33
+msgid "Change to"
+msgstr "Cambiar a"
+
+#: .\templates\users\email_change.html:46
+msgid "Your email address is still pending verification."
+msgstr "Su dirección de correo electrónico aún está pendiente de verificación."
+
+#: .\templates\users\email_change.html:48
 msgid "Re-send Verification"
 msgstr "Reenvío de confirmación"
 
-#: .\templates\users\email_change.html:31 .\templates\users\profile.html:44
+#: .\templates\users\email_change.html:57 .\templates\users\profile.html:38
 msgid "change_email"
 msgstr "Cambiar correo"
+
+#: .\templates\users\forms\login_form.html:8
+msgid "dont_have_account_yet"
+msgstr "¿Aún no tienes una cuenta?"
+
+#: .\templates\users\forms\login_form.html:8
+msgid "create_it"
+msgstr "¡Créala!"
+
+#: .\templates\users\forms\login_form.html:11
+msgid "forgot_password"
+msgstr "¿Olvidaste tu contraseña?"
 
 #: .\templates\users\login.html:5
 msgid "authorization"
 msgstr "Autenticación"
 
-#: .\templates\users\login.html:12
+#: .\templates\users\login.html:8
 msgid "log_in_to_datanar"
 msgstr "¡Entra en Datanar!"
 
@@ -1364,11 +1417,11 @@ msgid "logout"
 msgstr "Salir"
 
 #: .\templates\users\password_change.html:5
-#: .\templates\users\password_change.html:12
+#: .\templates\users\password_change.html:8
 msgid "password_change"
 msgstr "Cambio de contraseña"
 
-#: .\templates\users\password_change.html:13 .\templates\users\profile.html:45
+#: .\templates\users\password_change.html:9 .\templates\users\profile.html:50
 msgid "change_password"
 msgstr "Cambiar contraseña"
 
@@ -1381,14 +1434,14 @@ msgid "your_password_be_success_changed"
 msgstr "¡Tu contraseña ha sido cambiada con éxito!"
 
 #: .\templates\users\password_reset.html:5
-#: .\templates\users\password_reset.html:12
+#: .\templates\users\password_reset.html:8
 #: .\templates\users\password_reset_confirm.html:5
-#: .\templates\users\password_reset_confirm.html:12
+#: .\templates\users\password_reset_confirm.html:8
 #: .\templates\users\password_reset_done.html:5
 msgid "password_recovery"
 msgstr "Recuperación de contraseña"
 
-#: .\templates\users\password_reset.html:13
+#: .\templates\users\password_reset.html:9
 msgid "recover"
 msgstr "Recuperar"
 
@@ -1400,41 +1453,34 @@ msgstr "Contraseña recuperada"
 msgid "password_reset_completed_success"
 msgstr "El restablecimiento de la contraseña se ha completado con éxito"
 
-#: .\templates\users\password_reset_confirm.html:13
+#: .\templates\users\password_reset_confirm.html:9
 msgid "reset"
 msgstr "Restablecer"
 
 #: .\templates\users\password_reset_done.html:11
 msgid "email_instructions_for_password_recover_sent"
-msgstr ""
-"Se ha enviado un correo con instrucciones para recuperar la contraseña"
+msgstr "Se ha enviado un correo con instrucciones para recuperar la contraseña"
 
-#: .\templates\users\profile.html:37
+#: .\templates\users\profile.html:23
 msgid "delete_avatar"
 msgstr "Borrar avatar"
 
-#: .\templates\users\profile.html:42
+#: .\templates\users\profile.html:51
 msgid "save"
 msgstr "Guardar"
 
-#: .\templates\users\signup.html:12
+#: .\templates\users\signup.html:8
 msgid "greeting"
 msgstr "¡Bienvenido a Datanar!"
 
-#: .\templates\users\signup.html:13
+#: .\templates\users\signup.html:9
 msgid "register"
 msgstr "Registrarse"
 
-#: .\users\apps.py:8
+#: .\users\apps.py:10
 msgid "users"
 msgstr "Usuarios"
 
-#: .\users\models.py:9
+#: .\users\models.py:14
 msgid "avatar"
 msgstr "Avatar"
-
-msgid "country_from_which_redirect_was_made"
-msgstr "País desde el cual se realizó la redirección"
-
-msgid "city_from_which_redirect_was_made"
-msgstr "Ciudad desde la cual se realizó la redirección"

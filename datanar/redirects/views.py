@@ -27,18 +27,23 @@ geo_ip = GeoIP2()
 
 
 class RedirectView(View):
-    def get(
-        self,
-        request: HttpRequest,
-        *args: Any,
-        **kwargs: Any,
-    ) -> HttpResponse:
+    @staticmethod
+    def _get_object(**kwargs: Any) -> Redirect:
         redirect = Redirect.objects.get_by_short_link(
             kwargs[Redirect.short_link.field.name],
         )
 
         if redirect is None or not redirect.is_active:
             raise Http404
+        return redirect
+
+    def get(
+        self,
+        request: HttpRequest,
+        *args: Any,
+        **kwargs: Any,
+    ) -> HttpResponse:
+        redirect = self._get_object(**kwargs)
 
         if redirect.password:
             form = PasswordForm()
@@ -52,16 +57,15 @@ class RedirectView(View):
         *args: Any,
         **kwargs: Any,
     ) -> HttpResponse:
-        redirect = Redirect.objects.get_by_short_link(
-            kwargs[Redirect.short_link.field.name],
-        )
+        redirect = self._get_object(**kwargs)
+
         form = PasswordForm(request.POST)
+        if form.is_valid():
+            form_password = form.cleaned_data[Redirect.password.field.name]
+            if form_password == redirect.password:
+                return self.perform_redirect(redirect)
 
-        form_password = form.cleaned_data["password"]
-        if form.is_valid() and form_password == redirect.password:
-            return self.perform_redirect(redirect)
-
-        form.add_error("password", _("invalid_password"))
+        form.add_error(Redirect.password.field.name, _("invalid_password"))
         return render(request, "redirect/redirect.html", {"form": form})
 
     def perform_redirect(self, redirect: Redirect) -> HttpResponseRedirect:
