@@ -1,28 +1,21 @@
 __all__ = ("generate_short_link",)
 
-import hashlib
-
-from sqids import Sqids
+import secrets
+import string
 
 from redirects.models import Redirect
 
-sqids = Sqids()
-
+ALPHABET = string.ascii_letters + string.digits
+MIN_LENGTH = 5
+ATTEMPTS_PER_LENGTH = 20
 MAX_GENERATION_ATTEMPTS = 200
 
 
-def generate_short_link(long_link: str) -> str:
-    if not isinstance(long_link, str):
-        msg = "long_link must be a string"
-        raise TypeError(msg)
-
-    for i in range(MAX_GENERATION_ATTEMPTS):
-        temp_string = f"{long_link}{i}" if i > 0 else long_link
-        hash_object = hashlib.sha256(temp_string.encode())
-        number = int.from_bytes(hash_object.digest(), byteorder="big")
-        short_link = sqids.encode(list(map(int, list(str(number)))))[:5]
-        if not Redirect.objects.get_by_short_link(short_link):
+def generate_short_link() -> str:
+    for attempt in range(MAX_GENERATION_ATTEMPTS):
+        length = MIN_LENGTH + attempt // ATTEMPTS_PER_LENGTH
+        short_link = "".join(secrets.choice(ALPHABET) for _ in range(length))
+        if not Redirect.objects.filter(short_link=short_link).exists():
             return short_link
-
     msg = "Error generating short link"
     raise RuntimeError(msg)
