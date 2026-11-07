@@ -4,6 +4,7 @@ from io import BytesIO
 from typing import Any, TYPE_CHECKING
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.http import (
     FileResponse,
     HttpRequest,
@@ -14,8 +15,7 @@ from django.shortcuts import get_object_or_404
 from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
 from django.views import View
-from django.views.generic.detail import DetailView
-from django.views.generic.list import ListView
+from django.views.generic import DetailView, ListView
 import openpyxl
 
 from core.mixins import FormMethodExtender, RedirectToLastPageMixin
@@ -41,8 +41,8 @@ def get_clicks_by_mode(short_link: str, mode: str) -> "QuerySet[Click]":
 class MyLinksView(
     LoginRequiredMixin,
     FormMethodExtender,
-    ListView,
     RedirectToLastPageMixin,
+    ListView,
 ):
     template_name = "statistic/my_links.html"
     context_object_name = "links"
@@ -117,13 +117,19 @@ class LinkDetailView(LoginRequiredMixin, DetailView):
         return res
 
 
-class DownloadStatistic(View):
+class DownloadStatistic(LoginRequiredMixin, View):
     def get(
         self,
         request: HttpRequest,
         link: str,
         period: str,
     ) -> FileResponse:
+        redirect = get_object_or_404(Redirect, short_link=link)
+
+        user = self.request.user
+        if redirect.user != user and not user.is_staff:
+            raise PermissionDenied
+
         wb = openpyxl.Workbook()
         ws = wb.active
 
