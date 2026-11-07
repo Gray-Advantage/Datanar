@@ -2,7 +2,6 @@ from pathlib import Path
 import sys
 
 from decouple import config
-from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -105,7 +104,7 @@ MIDDLEWARE = [
     "tz_detect.middleware.TimezoneMiddleware",
 ]
 
-if settings.DEBUG and not TEST:
+if DEBUG and not TEST:
     INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
     INTERNAL_IPS = ["127.0.0.1"]
