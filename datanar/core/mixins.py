@@ -83,7 +83,7 @@ class StaffUserRequiredMixin(AccessMixin):
         request: HttpRequest,
         *args: Any,
         **kwargs: Any,
-    ) -> HttpResponse:
-        if not self.request.user.is_staff:
+    ) -> "HttpResponseBase":
+        if not request.user.is_staff:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
