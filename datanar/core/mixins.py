@@ -70,8 +70,8 @@ class FormMethodExtender(View):
         *args: Any,
         **kwargs: Any,
     ) -> "HttpResponseBase":
-        method = request.POST.get("_method")
-        if method in ("DELETE", "PATCH", "PUT"):
+        method = request.POST.get("_method", "")
+        if method.upper() in ("DELETE", "PATCH", "PUT"):
             request.method = method
             return super().dispatch(request, *args, **kwargs)
         return super().post(request, *args, **kwargs)
