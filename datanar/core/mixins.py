@@ -11,6 +11,7 @@ from django.http import (
     Http404,
     HttpRequest,
     HttpResponse,
+    HttpResponseBase,
     HttpResponseRedirect,
 )
 from django.views.generic import View
@@ -68,9 +69,9 @@ class FormMethodExtender(View):
         request: HttpRequest,
         *args: Any,
         **kwargs: Any,
-    ) -> HttpResponse:
+    ) -> "HttpResponseBase":
         method = request.POST.get("_method", None)
-        if method:
+        if method in ("DELETE", "PATCH", "PUT"):
             request.method = method
             return super().dispatch(request, *args, **kwargs)
         return super().post(request, *args, **kwargs)
