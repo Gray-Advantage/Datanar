@@ -8,55 +8,55 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from core.models import TimeStampedModel
+from statistic.converters import Period
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from django.db.models import QuerySet
 
 
 class ClickManager(models.Manager):
-    def count_for_short_link(self, short_link: str) -> int:
+    def count_for_link(self, short_link: str) -> int:
         return (
-            self.get_queryset()
-            .filter(redirect__short_link=short_link)
-            .prefetch_related(Click.redirect.field.name)
-            .count()
+            self.get_queryset().filter(redirect__short_link=short_link).count()
         )
 
-    def for_short_link_by_all_time(self, short_link: str) -> "QuerySet[Click]":
+    def for_link(self, short_link: str) -> "QuerySet[Click]":
         return (
             self.get_queryset()
             .filter(redirect__short_link=short_link)
-            .prefetch_related(Click.redirect.field.name)
             .only(
                 Click.os.field.name,
                 Click.browser.field.name,
                 Click.city.field.name,
                 Click.country.field.name,
                 Click.created_at.field.name,
-                f"{Click.redirect.field.name}_id",
             )
         )
 
-    def for_short_link_by_last_year(
-        self,
-        short_link: str,
-    ) -> "QuerySet[Click]":
-        return self.for_short_link_by_all_time(short_link).filter(
+    def for_link_last_year(self, short_link: str) -> "QuerySet[Click]":
+        return self.for_link(short_link).filter(
             created_at__gte=timezone.now() - timedelta(days=365),
         )
 
-    def for_short_link_by_last_month(
-        self,
-        short_link: str,
-    ) -> "QuerySet[Click]":
-        return self.for_short_link_by_all_time(short_link).filter(
+    def for_link_last_month(self, short_link: str) -> "QuerySet[Click]":
+        return self.for_link(short_link).filter(
             created_at__gte=timezone.now() - timedelta(days=30),
         )
 
-    def for_short_link_by_last_day(self, short_link: str) -> "QuerySet[Click]":
-        return self.for_short_link_by_all_time(short_link).filter(
+    def for_link_last_day(self, short_link: str) -> "QuerySet[Click]":
+        return self.for_link(short_link).filter(
             created_at__gte=timezone.now() - timedelta(days=1),
         )
+
+    def by_period(self, short_link: str, period: Period) -> "QuerySet[Click]":
+        periods: dict[str, Callable] = {
+            Period.YEAR: self.for_link_last_year,
+            Period.MONTH: self.for_link_last_month,
+            Period.DAY: self.for_link_last_day,
+        }
+        return periods.get(period, self.for_link)(short_link)
 
 
 class Click(TimeStampedModel):
