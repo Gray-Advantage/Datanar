@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 00:56+0300\n"
+"POT-Creation-Date: 2026-11-05 14:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,362 +18,371 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\api\apps.py:8
+#: .\api\apps.py:10
 msgid "api"
 msgstr "API"
 
-#: .\api\views.py:147
+#: .\api\views.py:191
 msgid "This field is required."
 msgstr "このフィールドは必須です"
 
-#: .\api\views.py:151
+#: .\api\views.py:195
 msgid "Enter a valid URL."
 msgstr "有効なURLを入力します"
 
-#: .\api\views.py:155 .\redirects\forms.py:90 .\redirects\forms.py:103
+#: .\api\views.py:199 .\redirects\forms.py:76
 #: .\templates\api\docs\redirect__create.html:185
 msgid "this_url_is_blocked"
 msgstr "このURLはブロックされています"
 
-#: .\api\views.py:159 .\redirects\forms.py:84
+#: .\api\views.py:203 .\redirects\forms.py:68
 #: .\templates\api\docs\redirect__create.html:181
 msgid "custom_url_already_use"
 msgstr "このカスタムURLアドレスはすでに使用されています。"
 
-#: .\core\apps.py:8
+#: .\core\apps.py:10
 msgid "base_forms"
 msgstr "基本フォーム"
 
-#: .\dashboard\apps.py:8 .\templates\includes\header.html:66
-msgid "dashboard"
-msgstr "ダッシュボード"
+#: .\core\models.py:13
+msgid "Creation time"
+msgstr "作成時間"
 
-#: .\dashboard\models.py:42 .\dashboard\models.py:48 .\dashboard\models.py:52
-msgid "domain_regex"
-msgstr "ドメイン規則性"
+#: .\core\models.py:14
+msgid "When the object was created."
+msgstr "オブジェクトが作成された日時。"
 
-#: .\dashboard\models.py:43 .\templates\dashboard\black_list.html:18
-msgid "domain_regex_that_will_be_prohibited_from_shortening"
-msgstr "短縮が許可されないドメインの正規表現"
+#: .\core\models.py:18
+msgid "Update time"
+msgstr "更新時間"
 
-#: .\dashboard\models.py:49
-msgid "domains_regex"
-msgstr "ドメインレギュラー"
+#: .\core\models.py:19
+msgid "When the object was last updated."
+msgstr "オブジェクトが最後に更新された日時。"
 
-#: .\datanar\settings.py:215
-msgid "English"
-msgstr "English"
-
-#: .\datanar\settings.py:216
-msgid "Russian"
-msgstr "Русский"
-
-#: .\datanar\settings.py:217
-msgid "Ukrainian"
-msgstr "Українська"
-
-#: .\datanar\settings.py:218
-msgid "Bulgarian"
-msgstr "Български"
-
-#: .\datanar\settings.py:219
-msgid "German"
-msgstr "Deutsch"
-
-#: .\datanar\settings.py:220
-msgid "Spanish"
-msgstr "Español"
-
-#: .\datanar\settings.py:221
-msgid "French"
-msgstr "Français"
-
-#: .\datanar\settings.py:222
-msgid "Japanese"
-msgstr "日本語"
-
-#: .\homepage\apps.py:8
-msgid "homepage"
-msgstr "ホームページ"
-
-#: .\qr_codes\apps.py:8
-msgid "qr-codes"
-msgstr "QRコード"
-
-#: .\redirects\admin.py:34 .\redirects\models.py:71
-#: .\templates\api\docs\redirect__create.html:95
-#: .\templates\api\docs\redirect__get.html:69
-#: .\templates\api\docs\redirect__get.html:258
-msgid "long_link"
-msgstr "長いリンク"
-
-#: .\redirects\admin.py:40
-msgid "block_selected_redirects"
-msgstr "選択したリダイレクトをブロックする"
-
-#: .\redirects\admin.py:53
-msgid "success_block_selected_redirect"
-msgstr "選択したリダイレクトが正常にブロックされ、削除されました"
-
-#: .\redirects\admin.py:55
-msgid "deactivate_selected_redirects"
-msgstr "選択したリダイレクトを無効にする"
-
-#: .\redirects\admin.py:61
-msgid "success_deactivate_selected_redirect"
-msgstr "選択されたリダイレクトは正常に無効化されました。"
-
-#: .\redirects\admin.py:63
-msgid "activate_selected_redirects"
-msgstr "選択したリダイレクトを有効にする"
-
-#: .\redirects\admin.py:70
-msgid "success_activate_selected_redirect"
-msgstr "選択されたリダイレクトは正常に有効化されました。"
-
-#: .\redirects\apps.py:8 .\redirects\models.py:137
-msgid "redirects"
-msgstr "リダイレクト"
-
-#: .\redirects\forms.py:31 .\templates\api\docs\redirect__create.html:43
-msgid "custom_url"
-msgstr "カスタムURLアドレス"
-
-#: .\redirects\forms.py:32
-msgid "custom_url_that_would_like_have_instead_generated_one"
-msgstr "生成されたものの代わりに持ちたいユーザー定義のURLアドレス。"
-
-#: .\redirects\forms.py:79
-msgid "custom_url_should_not_have_slash"
-msgstr "カスタムリンクには’/'を含めてはならない"
-
-#: .\redirects\forms.py:167
-msgid "date_validity_invalid"
-msgstr "有効期限は現在の日付より小さくすることはできません"
-
-#: .\redirects\forms.py:202 .\templates\api\docs\redirect__create.html:109
-#: .\templates\api\docs\redirect__get.html:85
-#: .\templates\api\docs\redirect__get.html:272
-#: .\templates\api\docs\token__create.html:36
-#: .\templates\api\docs\token__get.html:36
-#: .\templates\statistic\link_detail.html:27
-#: .\templates\statistic\link_detail.html:54
-msgid "Password"
-msgstr "パスワード"
-
-#: .\redirects\forms.py:203
-msgid "password_before_redirect"
-msgstr "リダイレクトする前にパスワードを入力してください"
-
-#: .\redirects\models.py:60
+#: .\core\models.py:31
 msgid "user"
 msgstr "ユーザー"
 
-#: .\redirects\models.py:61
+#: .\core\models.py:32
 msgid "user_who_create_bond"
 msgstr "短いリンクと長いリンクの間の関連を作成したユーザー"
 
-#: .\redirects\models.py:65 .\templates\api\docs\qr_code__get.html:36
+#: .\core\models.py:37 .\templates\includes\footer.html:19
+msgid "API"
+msgstr "API"
+
+#: .\core\models.py:38
+msgid "Web"
+msgstr "ウェブ"
+
+#: .\core\models.py:39
+msgid "Web (file)"
+msgstr "ファイル"
+
+#: .\core\models.py:42
+msgid "create_method"
+msgstr "作成方法"
+
+#: .\core\models.py:43 .\templates\api\docs\redirect__create.html:137
+#: .\templates\api\docs\redirect__get.html:117
+#: .\templates\api\docs\redirect__get.html:300
+msgid "method_which_redirect_was_created"
+msgstr "リダイレクトの作成方法"
+
+#: .\core\models.py:55 .\templates\api\docs\qr_code__get.html:36
 #: .\templates\api\docs\redirect__create.html:102
 #: .\templates\api\docs\redirect__get.html:77
 #: .\templates\api\docs\redirect__get.html:265
 msgid "short_link"
 msgstr "短いリンク"
 
-#: .\redirects\models.py:66
+#: .\core\models.py:56
 msgid "shorten_link_to_redirect_to_resource"
 msgstr "最終リソースにリダイレクトされる短縮リンク"
 
-#: .\redirects\models.py:72 .\templates\api\docs\redirect__create.html:36
-msgid "resource_to_which_short_link_lead"
-msgstr "短いリンクが指す最終リソース"
-
-#: .\redirects\models.py:76 .\templates\api\docs\redirect__create.html:130
-#: .\templates\api\docs\redirect__get.html:109
-#: .\templates\api\docs\redirect__get.html:293
-msgid "creation_time"
-msgstr "作成時間"
-
-#: .\redirects\models.py:77
-msgid "when_bond_was_create"
-msgstr "短いリンクと長いリンクの間の関連が作成されたとき"
-
-#: .\redirects\models.py:81
-msgid "password"
-msgstr "パスワード"
-
-#: .\redirects\models.py:82 .\templates\api\docs\redirect__create.html:50
-msgid "password_that_will_requested_to_redirect"
-msgstr "リダイレクトする前に要求されるパスワード"
-
-#: .\redirects\models.py:88 .\templates\api\docs\redirect__create.html:116
+#: .\core\models.py:62 .\templates\api\docs\redirect__create.html:116
 #: .\templates\api\docs\redirect__get.html:93
 #: .\templates\api\docs\redirect__get.html:279
 msgid "valid_day_number"
 msgstr "有効期限"
 
-#: .\redirects\models.py:89 .\templates\api\docs\redirect__create.html:57
+#: .\core\models.py:63 .\templates\api\docs\redirect__create.html:57
 msgid "how_many_day_link_will_be_valid"
 msgstr "リンクが無効化される前に有効な日数"
 
-#: .\redirects\models.py:95 .\templates\api\docs\redirect__create.html:123
+#: .\core\models.py:69 .\templates\api\docs\redirect__create.html:123
 #: .\templates\api\docs\redirect__get.html:101
 #: .\templates\api\docs\redirect__get.html:286
 msgid "valid_click_number"
 msgstr "有効なリダイレクト数"
 
-#: .\redirects\models.py:96 .\templates\api\docs\redirect__create.html:64
+#: .\core\models.py:70 .\templates\api\docs\redirect__create.html:64
 msgid "how_many_click_on_link_will_be_valid"
 msgstr "リンクが無効化される前に何回リダイレクトできるか"
 
-#: .\redirects\models.py:102
+#: .\core\models.py:76
 msgid "active"
 msgstr "積極的に"
 
-#: .\redirects\models.py:103 .\templates\api\docs\redirect__create.html:144
+#: .\core\models.py:77 .\templates\api\docs\redirect__create.html:144
 #: .\templates\api\docs\redirect__get.html:125
 #: .\templates\api\docs\redirect__get.html:307
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "is_active"
 msgstr "今、紹介は有効か"
 
-#: .\redirects\models.py:107 .\templates\api\docs\redirect__create.html:151
+#: .\core\models.py:81 .\templates\api\docs\redirect__create.html:151
 #: .\templates\api\docs\redirect__get.html:133
 #: .\templates\api\docs\redirect__get.html:314
 msgid "deactivation_time"
 msgstr "休止時間"
 
-#: .\redirects\models.py:108
+#: .\core\models.py:82
 msgid "when_bond_was_deactivated"
 msgstr "リダイレクトが解除された場合"
 
-#: .\redirects\models.py:113
+#: .\dashboard\apps.py:10 .\templates\includes\header.html:72
+msgid "dashboard"
+msgstr "ダッシュボード"
+
+#: .\dashboard\models.py:45 .\dashboard\models.py:53 .\dashboard\models.py:57
+msgid "domain_regex"
+msgstr "ドメイン規則性"
+
+#: .\dashboard\models.py:46 .\templates\dashboard\black_list.html:18
+msgid "domain_regex_that_will_be_prohibited_from_shortening"
+msgstr "短縮が許可されないドメインの正規表現"
+
+#: .\dashboard\models.py:54
+msgid "domains_regex"
+msgstr "ドメインレギュラー"
+
+#: .\datanar\settings.py:241
+msgid "English"
+msgstr "English"
+
+#: .\datanar\settings.py:242
+msgid "Russian"
+msgstr "Русский"
+
+#: .\datanar\settings.py:243
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: .\datanar\settings.py:244
+msgid "Bulgarian"
+msgstr "Български"
+
+#: .\datanar\settings.py:245
+msgid "German"
+msgstr "Deutsch"
+
+#: .\datanar\settings.py:246
+msgid "Spanish"
+msgstr "Español"
+
+#: .\datanar\settings.py:247
+msgid "French"
+msgstr "Français"
+
+#: .\datanar\settings.py:248
+msgid "Japanese"
+msgstr "日本語"
+
+#: .\homepage\apps.py:10
+msgid "homepage"
+msgstr "ホームページ"
+
+#: .\qr_codes\apps.py:10
+msgid "qr-codes"
+msgstr "QRコード"
+
+#: .\redirects\admin.py:46
+msgid "block_selected_redirects"
+msgstr "選択したリダイレクトをブロックする"
+
+#: .\redirects\admin.py:76
+msgid "success_block_selected_redirect"
+msgstr "選択したリダイレクトが正常にブロックされ、削除されました"
+
+#: .\redirects\admin.py:78
+msgid "deactivate_selected_redirects"
+msgstr "選択したリダイレクトを無効にする"
+
+#: .\redirects\admin.py:88
+msgid "success_deactivate_selected_redirect"
+msgstr "選択されたリダイレクトは正常に無効化されました。"
+
+#: .\redirects\admin.py:90
+msgid "activate_selected_redirects"
+msgstr "選択したリダイレクトを有効にする"
+
+#: .\redirects\admin.py:101
+msgid "success_activate_selected_redirect"
+msgstr "選択されたリダイレクトは正常に有効化されました。"
+
+#: .\redirects\apps.py:10 .\redirects\models.py:66
+msgid "redirects"
+msgstr "リダイレクト"
+
+#: .\redirects\forms.py:20 .\templates\api\docs\redirect__create.html:43
+msgid "custom_url"
+msgstr "カスタムURLアドレス"
+
+#: .\redirects\forms.py:21
+msgid "custom_url_that_would_like_have_instead_generated_one"
+msgstr "生成されたものの代わりに持ちたいユーザー定義のURLアドレス。"
+
+#: .\redirects\forms.py:63
+msgid "custom_url_should_not_have_slash"
+msgstr "カスタムリンクには’/'を含めてはならない"
+
+#: .\redirects\forms.py:124
+msgid "date_validity_invalid"
+msgstr "有効期限は現在の日付より小さくすることはできません"
+
+#: .\redirects\forms.py:147 .\templates\api\docs\redirect__create.html:109
+#: .\templates\api\docs\redirect__get.html:85
+#: .\templates\api\docs\redirect__get.html:272
+#: .\templates\api\docs\token__create.html:36
+#: .\templates\api\docs\token__get.html:36
+#: .\templates\statistic\link_detail.html:23
+#: .\templates\statistic\link_detail.html:50
+msgid "Password"
+msgstr "パスワード"
+
+#: .\redirects\forms.py:148
+msgid "password_before_redirect"
+msgstr "リダイレクトする前にパスワードを入力してください"
+
+#: .\redirects\models.py:43 .\templates\api\docs\redirect__create.html:95
+#: .\templates\api\docs\redirect__get.html:69
+#: .\templates\api\docs\redirect__get.html:258
+msgid "long_link"
+msgstr "長いリンク"
+
+#: .\redirects\models.py:44 .\templates\api\docs\redirect__create.html:36
+msgid "resource_to_which_short_link_lead"
+msgstr "短いリンクが指す最終リソース"
+
+#: .\redirects\models.py:48
+msgid "password"
+msgstr "パスワード"
+
+#: .\redirects\models.py:49 .\templates\api\docs\redirect__create.html:50
+msgid "password_that_will_requested_to_redirect"
+msgstr "リダイレクトする前に要求されるパスワード"
+
+#: .\redirects\models.py:55
 msgid "ip_address"
 msgstr "IPアドレス"
 
-#: .\redirects\models.py:114
+#: .\redirects\models.py:56
 msgid "client_ip_address_who_created_redirect"
 msgstr "リダイレクト元のIPアドレス"
 
-#: .\redirects\models.py:121 .\templates\includes\footer.html:9
-msgid "API"
-msgstr "API"
-
-#: .\redirects\models.py:122
-msgid "Web"
-msgstr "ウェブ"
-
-#: .\redirects\models.py:123
-msgid "Web_by_file"
-msgstr "ファイル"
-
-#: .\redirects\models.py:126
-msgid "create_method"
-msgstr "作成方法"
-
-#: .\redirects\models.py:127 .\templates\api\docs\redirect__create.html:137
-#: .\templates\api\docs\redirect__get.html:117
-#: .\templates\api\docs\redirect__get.html:300
-msgid "method_which_redirect_was_created"
-msgstr "リダイレクトの作成方法"
-
-#: .\redirects\models.py:136 .\redirects\models.py:140
+#: .\redirects\models.py:65 .\redirects\models.py:69
 msgid "redirect"
 msgstr "リダイレクト"
 
-#: .\redirects\views.py:46
+#: .\redirects\views.py:68
 msgid "invalid_password"
 msgstr "無効なパスワード"
 
-#: .\statistic\apps.py:9 .\templates\includes\link_card.html:13
+#: .\statistic\apps.py:11 .\templates\includes\link_card.html:13
 msgid "statistic"
 msgstr "統計"
 
-#: .\statistic\models.py:44
-msgid "redirect_time"
-msgstr "リダイレクト時間"
-
-#: .\statistic\models.py:51
+#: .\statistic\models.py:67
 msgid "os"
 msgstr "os"
 
-#: .\statistic\models.py:52
+#: .\statistic\models.py:68
 msgid "operating_system_from_which_redirect_was_made"
 msgstr "リダイレクトが行われたオペレーティングシステム。"
 
-#: .\statistic\models.py:56
+#: .\statistic\models.py:73
 msgid "browser"
 msgstr "ブラウザ"
 
-#: .\statistic\models.py:57
+#: .\statistic\models.py:74
 msgid "browser_from_which_redirect_was_made"
 msgstr "リダイレクトが行われたブラウザ。"
 
-#: .\statistic\models.py:60
+#: .\statistic\models.py:79
 msgid "country"
 msgstr "国"
 
-#: .\statistic\models.py:61
+#: .\statistic\models.py:80
+msgid "country_from_which_redirect_was_made"
+msgstr "リダイレクトが行われた国。"
+
+#: .\statistic\models.py:85
 msgid "city"
 msgstr "都市"
 
-#: .\statistic\views.py:96
+#: .\statistic\models.py:86
+msgid "city_from_which_redirect_was_made"
+msgstr "リダイレクトが行われた都市。"
+
+#: .\statistic\models.py:94
+msgid "click"
+msgstr "クリック"
+
+#: .\statistic\models.py:95
+msgid "clicks"
+msgstr "クリック数"
+
+#: .\statistic\views.py:110
 msgid "Unknown"
 msgstr "不明"
 
-#: .\statistic\views.py:108
+#: .\statistic\views.py:130
 msgid "Created"
 msgstr "作成された"
 
-#: .\statistic\views.py:109 .\templates\statistic\link_detail.html:85
+#: .\statistic\views.py:131 .\templates\statistic\link_detail.html:80
 msgid "OS"
 msgstr "OS"
 
-#: .\statistic\views.py:110
+#: .\statistic\views.py:132
 msgid "Browser"
 msgstr "ブラウザ"
 
-#: .\statistic\views.py:111
+#: .\statistic\views.py:133
 msgid "Country"
 msgstr "国"
 
-#: .\statistic\views.py:112
+#: .\statistic\views.py:134
 msgid "City"
 msgstr "都市"
 
-#: .\templates\403.html:5 .\templates\404.html:5 .\templates\500.html:5
-msgid "oops"
-msgstr "おっと！"
-
-#: .\templates\403.html:11
+#: .\templates\403.html:5
 msgid "access_denied"
 msgstr "アクセス拒否"
 
-#: .\templates\403.html:13 .\templates\404.html:13 .\templates\500.html:13
-#: .\templates\users\password_change_done.html:12
-#: .\templates\users\password_reset_complete.html:12
-#: .\templates\users\password_reset_done.html:12
-msgid "to_main"
-msgstr "ホームに戻る"
-
-#: .\templates\404.html:11
+#: .\templates\404.html:5
 msgid "page_not_found"
 msgstr "ページが見つかりません"
 
-#: .\templates\500.html:11
+#: .\templates\500.html:5
 msgid "server_error"
 msgstr "サーバーエラー"
 
 #: .\templates\account\email\account_already_exists_message.txt:4
 #, python-format
 msgid ""
-"You are receiving this email because you or someone else tried to signup for an\n"
+"You are receiving this email because you or someone else tried to signup for "
+"an\n"
 "account using email address:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"However, an account using that email address already exists.  In case you have\n"
-"forgotten about this, please use the password forgotten procedure to recover\n"
+"However, an account using that email address already exists.  In case you "
+"have\n"
+"forgotten about this, please use the password forgotten procedure to "
+"recover\n"
 "your account:\n"
 "\n"
 "%(password_reset_url)s"
@@ -410,14 +419,16 @@ msgstr ""
 #: .\templates\account\email\email_confirmation_message.txt:5
 #, python-format
 msgid ""
-"You're receiving this email because user %(user_display)s has given your email address to register an account on %(site_domain)s.\n"
+"You're receiving this email because user %(user_display)s has given your "
+"email address to register an account on %(site_domain)s.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s"
 msgstr ""
 "あなたがこのメールを受け取ったのは、ユーザー%(user_display)sがあなたの\n"
 "電子メールアドレスを%(site_domain)sのアカウント登録に使用したからです。\n"
 "\n"
-"これが正しいことを確認するために、次のURLにアクセスしてください：%(activate_url)s"
+"これが正しいことを確認するために、次のURLにアクセスしてください："
+"%(activate_url)s"
 
 #: .\templates\account\email\email_confirmation_subject.txt:3
 msgid "Please Confirm Your Email Address"
@@ -425,13 +436,16 @@ msgstr "あなたのメールアドレスを確認してください"
 
 #: .\templates\account\email\password_reset_key_message.txt:4
 msgid ""
-"You're receiving this email because you or someone else has requested a password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+"You're receiving this email because you or someone else has requested a "
+"password reset for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
 msgstr ""
 "あなたがこのメールを受け取ったのは、あなた自身または他の誰かが\n"
 "あなたのアカウントのパスワードをリセットするようにリクエストしたからです。\n"
 "パスワードのリセットをリクエストしていない場合、このメールは無視して\n"
-"安全に処理できます。パスワードをリセットするには、以下のリンクをクリックしてください。"
+"安全に処理できます。パスワードをリセットするには、以下のリンクをクリックして"
+"ください。"
 
 #: .\templates\account\email\password_reset_key_message.txt:9
 #, python-format
@@ -447,7 +461,8 @@ msgstr "パスワードリセットメール"
 #, python-format
 msgid ""
 "You are receiving this email because you or someone else has requested a\n"
-"password for your user account. However, we do not have any record of a user\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
 "with email %(email)s in our database.\n"
 "\n"
 "This mail can be safely ignored if you did not request a password reset.\n"
@@ -455,13 +470,15 @@ msgid ""
 "If it was you, you can sign up for an account using the link below."
 msgstr ""
 "あなたがこのメールを受け取っているのは、あなた自身または他の誰かが\n"
-"あなたのアカウントのパスワードをリセットするようにリクエストしたからです。しかし、私たちのデータベースには\n"
+"あなたのアカウントのパスワードをリセットするようにリクエストしたからです。し"
+"かし、私たちのデータベースには\n"
 "電子メールアドレス%(email)sのユーザーに関する記録はありません。\n"
 "\n"
 "パスワードのリセットをリクエストしていない場合、このメールは無視して\n"
 "安全に処理できます。\n"
 "\n"
-"もしこれがあなたであれば、以下のリンクを使用してサイトに登録することができます。"
+"もしこれがあなたであれば、以下のリンクを使用してサイトに登録することができま"
+"す。"
 
 #: .\templates\api\base.html:17
 msgid "datanar_api_docs"
@@ -514,15 +531,21 @@ msgstr "DatanarサービスAPIドキュメントへようこそ！"
 
 #: .\templates\api\docs\preamble.html:24
 msgid "who_is_the_API_intended_for"
-msgstr "APIは、アプリケーションやサービスにリンク短縮機能を統合したい開発者や企業のために設計されています。"
+msgstr ""
+"APIは、アプリケーションやサービスにリンク短縮機能を統合したい開発者や企業のた"
+"めに設計されています。"
 
 #: .\templates\api\docs\preamble.html:25
 msgid "API_description_in_preamble"
-msgstr "一方、高度な機能は、登録されたユーザーだけが利用でき、登録後に取得できるトークンを使用する必要があります。"
+msgstr ""
+"一方、高度な機能は、登録されたユーザーだけが利用でき、登録後に取得できるトー"
+"クンを使用する必要があります。"
 
 #: .\templates\api\docs\qr_code__get.html:9
 msgid "get_qr_code_by_redirect"
-msgstr "ショート・リダイレクト・リンクからQRコードをダウンロードするためのリンクを入手する"
+msgstr ""
+"ショート・リダイレクト・リンクからQRコードをダウンロードするためのリンクを入"
+"手する"
 
 #: .\templates\api\docs\qr_code__get.html:11
 #: .\templates\api\docs\redirect__create.html:11
@@ -663,7 +686,7 @@ msgstr "説明"
 #: .\templates\api\docs\token__get.html:28
 #: .\templates\api\docs\token__get.html:35
 #: .\templates\api\docs\token__get.html:59
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "yes"
 msgstr "はい"
 
@@ -758,7 +781,8 @@ msgstr "Pythonコード例："
 #: .\templates\api\docs\token__create.html:106
 #: .\templates\api\docs\token__get.html:106
 msgid "reminder_that_passwords_better_kept_in_separate_file"
-msgstr "パスワードは別のファイルに保管するのがベストであることを忘れないでください。"
+msgstr ""
+"パスワードは別のファイルに保管するのがベストであることを忘れないでください。"
 
 #: .\templates\api\docs\qr_code__get.html:110
 #: .\templates\api\docs\redirect__delete.html:93
@@ -770,7 +794,10 @@ msgstr "すべてのリダイレクトを取得する"
 #: .\templates\api\docs\redirect__create.html:9
 msgid "redirect__create_api_docs"
 msgstr ""
-"APIの主なルートは、リダイレクトを作成することです。トークンを使わない場合は、リダイレクトとカスタムリンクを作成するだけです。トークンを使えば、リダイレクトはユーザのプロファイルに保存され、リダイレクトを作成する際に追加の属性を設定することができます。"
+"APIの主なルートは、リダイレクトを作成することです。トークンを使わない場合は、"
+"リダイレクトとカスタムリンクを作成するだけです。トークンを使えば、リダイレク"
+"トはユーザのプロファイルに保存され、リダイレクトを作成する際に追加の属性を設"
+"定することができます。"
 
 #: .\templates\api\docs\redirect__create.html:28
 #: .\templates\api\docs\redirect__create.html:42
@@ -781,7 +808,7 @@ msgstr ""
 #: .\templates\api\docs\redirect__create.html:136
 #: .\templates\api\docs\redirect__create.html:143
 #: .\templates\api\docs\redirect__create.html:150
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "no"
 msgstr "いいえ"
 
@@ -811,6 +838,12 @@ msgstr "トークンで利用可能"
 #: .\templates\api\docs\redirect__get.html:251
 msgid "Redirect id"
 msgstr "リダイレクションID"
+
+#: .\templates\api\docs\redirect__create.html:130
+#: .\templates\api\docs\redirect__get.html:109
+#: .\templates\api\docs\redirect__get.html:293
+msgid "creation_time"
+msgstr "作成時間"
 
 #: .\templates\api\docs\redirect__create.html:169
 msgid "success_created_redirect"
@@ -857,11 +890,14 @@ msgstr "正常に受信されたリダイレクト"
 #: .\templates\api\docs\token__create.html:9
 #: .\templates\api\docs\token__get.html:9
 msgid "to_start_interacting_with_extended_API_you_need_token"
-msgstr "サービスの拡張APIとのやり取りを開始するには、Tokenを取得する必要がある。"
+msgstr ""
+"サービスの拡張APIとのやり取りを開始するには、Tokenを取得する必要がある。"
 
 #: .\templates\api\docs\token__create.html:9
 msgid "each_new_POST_request_recreates_token"
-msgstr "このルートへのそれぞれの新しいPOSTリクエストは、例えば、前のTokenが開示された場合に備えて、ユーザのTokenを再作成する。"
+msgstr ""
+"このルートへのそれぞれの新しいPOSTリクエストは、例えば、前のTokenが開示された"
+"場合に備えて、ユーザのTokenを再作成する。"
 
 #: .\templates\api\docs\token__create.html:29
 #: .\templates\api\docs\token__get.html:29
@@ -880,7 +916,20 @@ msgstr "POST以外のリクエスト"
 
 #: .\templates\api\docs\token__get.html:9
 msgid "on_this_route_you_can_create_token_or_reacquire_existing_one"
-msgstr "このルートでは、まだTokenを持っていない場合はTokenを作成し、紛失した場合は既存のTokenを再取得することができる。"
+msgstr ""
+"このルートでは、まだTokenを持っていない場合はTokenを作成し、紛失した場合は既"
+"存のTokenを再取得することができる。"
+
+#: .\templates\base_error.html:5
+msgid "oops"
+msgstr "おっと！"
+
+#: .\templates\base_error.html:13
+#: .\templates\users\password_change_done.html:12
+#: .\templates\users\password_reset_complete.html:12
+#: .\templates\users\password_reset_done.html:12
+msgid "to_main"
+msgstr "ホームに戻る"
 
 #: .\templates\dashboard\all_links.html:5
 msgid "title__dashboard__all_links"
@@ -898,7 +947,7 @@ msgstr "ドメインのブラックリスト"
 msgid "server_logs"
 msgstr "サーバーログ"
 
-#: .\templates\dashboard\base.html:27 .\templates\includes\header.html:69
+#: .\templates\dashboard\base.html:27 .\templates\includes\header.html:75
 msgid "admin_panel"
 msgstr "管理者"
 
@@ -918,7 +967,7 @@ msgstr "変更"
 
 #: .\templates\dashboard\black_list.html:20
 #: .\templates\dashboard\includes\blocked_domain_modal_delete.html:19
-#: .\templates\includes\link_card.html:17
+#: .\templates\includes\link_card.html:18
 #: .\templates\qr_codes\QR_modal_delete.html:19
 msgid "Delete"
 msgstr "削除"
@@ -932,7 +981,7 @@ msgstr "ブロックされたドメインを追加する"
 #: .\templates\dashboard\includes\blocked_domain_modal_delete.html:14
 #: .\templates\dashboard\log.html:33
 #: .\templates\qr_codes\QR_modal_delete.html:14
-#: .\templates\users\email_change.html:29
+#: .\templates\users\email_change.html:52
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -964,14 +1013,15 @@ msgstr "リフレッシュ"
 msgid "clear_log"
 msgstr "クリアログ"
 
-#: .\templates\homepage\about.html:5 .\templates\includes\footer.html:8
+#: .\templates\homepage\about.html:5 .\templates\includes\footer.html:14
 msgid "about"
 msgstr "プロジェクトについて"
 
 #: .\templates\homepage\about.html:13
 msgid "about_beginning"
 msgstr ""
-"Datanarは、リンクの短縮を行うウェブサービスです。私たちのサイトを使えば、長いURLアドレスを簡単に\n"
+"Datanarは、リンクの短縮を行うウェブサービスです。私たちのサイトを使えば、長い"
+"URLアドレスを簡単に\n"
 "短縮して、より便利で使いやすくすることができます。"
 
 #: .\templates\homepage\about.html:17
@@ -1018,23 +1068,23 @@ msgstr "あなたのサービスを私たちのAPIと連携する"
 msgid "about_using"
 msgstr "このサイトは以下を使用して作成されました："
 
-#: .\templates\homepage\about.html:50
+#: .\templates\homepage\about.html:51
 msgid "developers"
 msgstr "開発者 - これらの素晴らしい人々："
 
-#: .\templates\homepage\about.html:56
+#: .\templates\homepage\about.html:57
 msgid "sergey"
 msgstr "アンドレーエフ・セルゲイ"
 
-#: .\templates\homepage\about.html:62
+#: .\templates\homepage\about.html:63
 msgid "vladimir"
 msgstr "クリメンコ・ウラジミール"
 
-#: .\templates\homepage\about.html:68
+#: .\templates\homepage\about.html:69
 msgid "artem"
 msgstr "トレチャコフ・アルテム"
 
-#: .\templates\homepage\about.html:74
+#: .\templates\homepage\about.html:75
 msgid "github_project"
 msgstr "GitHubのプロジェクト"
 
@@ -1042,41 +1092,42 @@ msgstr "GitHubのプロジェクト"
 msgid "title__homepage"
 msgstr "Datanar - リンクの短縮"
 
-#: .\templates\homepage\main.html:28
+#: .\templates\homepage\main.html:33
 msgid "short_description_under_logo"
 msgstr "あなたのリンクを短縮して、お客様が長いURLを見る必要がなくなります。"
 
-#: .\templates\homepage\main.html:30
+#: .\templates\homepage\main.html:35
 msgid "short_description_about_supported_files"
 msgstr ""
-".txt/.xlsxの拡張子を持つファイルを選択またはドラッグアンドドロップできます。txtでは各行がリンクとして扱われ、xlsxでは最初の列の各行が扱われます"
+".txt/.xlsxの拡張子を持つファイルを選択またはドラッグアンドドロップできます。"
+"txtでは各行がリンクとして扱われ、xlsxでは最初の列の各行が扱われます"
 
-#: .\templates\homepage\main.html:40
+#: .\templates\homepage\main.html:45
 msgid "label_link_file"
 msgstr "リンクのあるファイルが選択されました"
 
-#: .\templates\homepage\main.html:44
+#: .\templates\homepage\main.html:49
 msgid "delete_file"
 msgstr "ファイルを削除"
 
-#: .\templates\homepage\main.html:46
+#: .\templates\homepage\main.html:51
 msgid "choose_file"
 msgstr "ファイルを選択"
 
-#: .\templates\homepage\main.html:48
+#: .\templates\homepage\main.html:53
 msgid "shorten"
 msgstr "短縮する"
 
-#: .\templates\homepage\main.html:68
+#: .\templates\homepage\main.html:73
 msgid "message_error_count"
 msgstr "ファイルは一つだけドラッグアンドドロップしてください。"
 
-#: .\templates\homepage\main.html:69
+#: .\templates\homepage\main.html:74
 msgid "message_error_type"
-msgstr ".xlsxまたは.txtの拡張子を持つファイルをドラッグアンドドロップしてください。"
+msgstr ""
+".xlsxまたは.txtの拡張子を持つファイルをドラッグアンドドロップしてください。"
 
-#: .\templates\homepage\service_rules.html:5
-#: .\templates\includes\footer.html:7
+#: .\templates\homepage\service_rules.html:5 .\templates\includes\footer.html:9
 msgid "service_rules"
 msgstr "サービスの規則"
 
@@ -1087,87 +1138,84 @@ msgstr "Datanarサービスの規則"
 #: .\templates\homepage\service_rules.html:14
 msgid "welcome_service_rules"
 msgstr ""
-"Datanarのリンク短縮サービスへようこそ。私たちのサービスを利用することで、あなたは自動的に私たちの規則に同意することになります。それらを注意深くお読みください。"
+"Datanarのリンク短縮サービスへようこそ。私たちのサービスを利用することで、あな"
+"たは自動的に私たちの規則に同意することになります。それらを注意深くお読みくだ"
+"さい。"
 
 #: .\templates\homepage\service_rules.html:16
 msgid "rule_1"
 msgstr ""
-"1. "
-"アカウントを作成するために、私たちはユーザーのメールアドレス、ログイン名、パスワードを収集します。私たちはあなたのプライバシーを尊重します。すべての個人情報は、あなたのアカウントの管理のためだけに使用され、第三者には提供されません。"
+"1. アカウントを作成するために、私たちはユーザーのメールアドレス、ログイン名、"
+"パスワードを収集します。私たちはあなたのプライバシーを尊重します。すべての個"
+"人情報は、あなたのアカウントの管理のためだけに使用され、第三者には提供されま"
+"せん。"
 
 #: .\templates\homepage\service_rules.html:17
 msgid "rule_2"
 msgstr ""
-"2. "
-"私たちはあなたのデータを保護するために可能なすべての安全対策を講じています。あなたのパスワードは暗号化されて保存されます。複雑なパスワードを使用し、他人と共有しないことをお勧めします。"
+"2. 私たちはあなたのデータを保護するために可能なすべての安全対策を講じていま"
+"す。あなたのパスワードは暗号化されて保存されます。複雑なパスワードを使用し、"
+"他人と共有しないことをお勧めします。"
 
 #: .\templates\homepage\service_rules.html:18
 msgid "rule_3"
 msgstr ""
-"3. "
-"私たちのサービスを利用する際には、法律を違反する行為を行ったり、他のユーザーや第三者に害を及ぼす可能性のある方法でサービスを利用することは禁止されています。"
+"3. 私たちのサービスを利用する際には、法律を違反する行為を行ったり、他のユー"
+"ザーや第三者に害を及ぼす可能性のある方法でサービスを利用することは禁止されて"
+"います。"
 
 #: .\templates\homepage\service_rules.html:19
 msgid "rule_4"
-msgstr "4. 私たちは、私たちの利用規約に変更を加える権利を留保しています。重要な変更があった場合は、あなたに通知します。"
+msgstr ""
+"4. 私たちは、私たちの利用規約に変更を加える権利を留保しています。重要な変更が"
+"あった場合は、あなたに通知します。"
 
 #: .\templates\homepage\service_rules.html:21
 msgid "service_rules_thanks_for_choosing_us"
 msgstr ""
-"Datanarを選んでいただきありがとうございます！私たちはあなたの信頼を大切にし、便利で安全なリンク短縮サービスを提供することを目指しています。"
+"Datanarを選んでいただきありがとうございます！私たちはあなたの信頼を大切にし、"
+"便利で安全なリンク短縮サービスを提供することを目指しています。"
 
-#: .\templates\includes\header.html:15
+#: .\templates\includes\header.html:14
 msgid "theme"
 msgstr "テーマ"
 
-#: .\templates\includes\header.html:21
+#: .\templates\includes\header.html:20
 msgid "light"
 msgstr "ライト"
 
-#: .\templates\includes\header.html:27
+#: .\templates\includes\header.html:26
 msgid "dark"
 msgstr "ダーク"
 
-#: .\templates\includes\header.html:33
+#: .\templates\includes\header.html:32
 msgid "auto"
 msgstr "オート"
 
-#: .\templates\includes\header.html:54
+#: .\templates\includes\header.html:60
 msgid "no_user"
 msgstr "ユーザー名がありません"
 
-#: .\templates\includes\header.html:61 .\templates\users\profile.html:5
+#: .\templates\includes\header.html:67 .\templates\users\profile.html:5
 #: .\templates\users\profile.html:12
 msgid "my_profile"
 msgstr "マイプロフィール"
 
-#: .\templates\includes\header.html:62
+#: .\templates\includes\header.html:68
 msgid "my_links"
 msgstr "マイリンク"
 
-#: .\templates\includes\header.html:73
+#: .\templates\includes\header.html:79
 msgid "exit"
 msgstr "ログアウト"
 
-#: .\templates\includes\header.html:78 .\templates\users\login.html:13
+#: .\templates\includes\header.html:84 .\templates\users\login.html:9
 msgid "sign_in"
 msgstr "ログイン"
 
-#: .\templates\includes\header.html:81 .\templates\users\signup.html:5
+#: .\templates\includes\header.html:87 .\templates\users\signup.html:5
 msgid "registration"
 msgstr "登録"
-
-#: .\templates\includes\user_form.html:50
-msgid "dont_have_account_yet"
-msgstr "まだアカウントがありませんか？"
-
-#: .\templates\includes\user_form.html:50
-msgid "create_it"
-msgstr "作成しましょう！"
-
-#: .\templates\includes\user_form.html:51
-msgid "forgot_password"
-msgstr "パスワードを忘れましたか？"
 
 #: .\templates\redirect\redirect.html:4
 msgid "redirect_page"
@@ -1177,86 +1225,86 @@ msgstr "リダイレクト"
 msgid "title__link_detail"
 msgstr "リンク - 統計"
 
-#: .\templates\statistic\link_detail.html:18
+#: .\templates\statistic\link_detail.html:14
 msgid "link"
 msgstr "リンク"
 
-#: .\templates\statistic\link_detail.html:19
+#: .\templates\statistic\link_detail.html:15
 msgid "original"
 msgstr "オリジナル"
 
-#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:16
 msgid "after_10_days_deactivate_redirect_will_be_delete"
 msgstr "無効化から10日後、リダイレクトは削除されます"
 
-#: .\templates\statistic\link_detail.html:24
-#: .\templates\statistic\link_detail.html:42
+#: .\templates\statistic\link_detail.html:20
+#: .\templates\statistic\link_detail.html:38
 msgid "created"
 msgstr "作成されました"
 
-#: .\templates\statistic\link_detail.html:25
-#: .\templates\statistic\link_detail.html:46
+#: .\templates\statistic\link_detail.html:21
+#: .\templates\statistic\link_detail.html:42
 msgid "transitions_are_available"
 msgstr "利用可能なリダイレクト"
 
-#: .\templates\statistic\link_detail.html:26
-#: .\templates\statistic\link_detail.html:50
+#: .\templates\statistic\link_detail.html:22
+#: .\templates\statistic\link_detail.html:46
 msgid "valid_for_days"
 msgstr "有効な日数"
 
-#: .\templates\statistic\link_detail.html:33
-#: .\templates\statistic\link_detail.html:34
+#: .\templates\statistic\link_detail.html:29
+#: .\templates\statistic\link_detail.html:30
+#: .\templates\statistic\link_detail.html:43
 #: .\templates\statistic\link_detail.html:47
-#: .\templates\statistic\link_detail.html:51
 msgid "unlimited"
 msgstr "無制限"
 
-#: .\templates\statistic\link_detail.html:35
-#: .\templates\statistic\link_detail.html:55
+#: .\templates\statistic\link_detail.html:31
+#: .\templates\statistic\link_detail.html:51
 msgid "absent"
 msgstr "存在しません"
 
-#: .\templates\statistic\link_detail.html:60
+#: .\templates\statistic\link_detail.html:56
 msgid "statistics_for"
 msgstr "期間の統計"
 
-#: .\templates\statistic\link_detail.html:61
+#: .\templates\statistic\link_detail.html:57
 msgid "day"
 msgstr "日"
 
-#: .\templates\statistic\link_detail.html:62
+#: .\templates\statistic\link_detail.html:58
 msgid "month"
 msgstr "月"
 
-#: .\templates\statistic\link_detail.html:63
+#: .\templates\statistic\link_detail.html:59
 msgid "year"
 msgstr "年"
 
-#: .\templates\statistic\link_detail.html:64
+#: .\templates\statistic\link_detail.html:60
 msgid "all_time"
 msgstr "全期間"
 
-#: .\templates\statistic\link_detail.html:66
+#: .\templates\statistic\link_detail.html:62
 msgid "total_number_of_clicks_during_the_period"
 msgstr "期間中の総リダイレクト数"
 
-#: .\templates\statistic\link_detail.html:71
+#: .\templates\statistic\link_detail.html:72
 msgid "Browsers"
 msgstr "ブラウザ"
 
-#: .\templates\statistic\link_detail.html:99
+#: .\templates\statistic\link_detail.html:88
 msgid "Countries"
 msgstr "国"
 
-#: .\templates\statistic\link_detail.html:113
+#: .\templates\statistic\link_detail.html:96
 msgid "Cities"
 msgstr "都市"
 
-#: .\templates\statistic\link_detail.html:125
+#: .\templates\statistic\link_detail.html:102
 msgid "ip_geo_by_DB-IP"
 msgstr "DB-IPからのIPジオロケーション"
 
-#: .\templates\statistic\link_detail.html:126
+#: .\templates\statistic\link_detail.html:104
 msgid "download_statistics_for_the_period"
 msgstr "期間の統計をダウンロード"
 
@@ -1274,7 +1322,9 @@ msgstr "あなたのメールを確認してください"
 #: .\templates\users\confirm_email.html:12
 msgid "email_confirmation_description"
 msgstr ""
-"登録プロセスを完了してください。もし、あなたのメインのメールボックスに確認の電子メールを見つけられない場合は、スパムフォルダを確認してください。数分以内に確認の電子メールが届かない場合は、私たちに連絡してください。"
+"登録プロセスを完了してください。もし、あなたのメインのメールボックスに確認の"
+"電子メールを見つけられない場合は、スパムフォルダを確認してください。数分以内"
+"に確認の電子メールが届かない場合は、私たちに連絡してください。"
 
 #: .\templates\users\confirm_email_from_sent.html:18
 #, python-format
@@ -1294,7 +1344,9 @@ msgstr "確認"
 msgid ""
 "Unable to confirm %(email)s because it is already confirmed by a different "
 "account."
-msgstr "%(email)sの確認は無効化されました、なぜならそれはすでに他のユーザーによって確認されているからです"
+msgstr ""
+"%(email)sの確認は無効化されました、なぜならそれはすでに他のユーザーによって確"
+"認されているからです"
 
 #: .\templates\users\confirm_email_from_sent.html:39
 #, python-format
@@ -1302,25 +1354,54 @@ msgid ""
 "This email confirmation link expired or is invalid. Please <a "
 "href=\"%(email_url)s\">issue a new email confirmation request</a>."
 msgstr ""
-"この確認リンクの有効期限が切れているか、無効です。<a href=\"%(email_url)s\">新しいリクエストを送信してください。</a>."
+"この確認リンクの有効期限が切れているか、無効です。<a href=\"%(email_url)s\">"
+"新しいリクエストを送信してください。</a>."
 
-#: .\templates\users\email_change.html:8
+#: .\templates\users\email_change.html:4 .\templates\users\email_change.html:9
 msgid "email_change"
 msgstr "メールアドレスの変更"
 
+#: .\templates\users\email_change.html:21
+msgid "Current email"
+msgstr "現在のメールアドレス"
+
 #: .\templates\users\email_change.html:28
+msgid "Changing to"
+msgstr "変更先"
+
+#: .\templates\users\email_change.html:33
+msgid "Change to"
+msgstr "変更する"
+
+#: .\templates\users\email_change.html:46
+msgid "Your email address is still pending verification."
+msgstr "メールアドレスの確認がまだ完了していません。"
+
+#: .\templates\users\email_change.html:48
 msgid "Re-send Verification"
 msgstr "確認の再送信"
 
-#: .\templates\users\email_change.html:31 .\templates\users\profile.html:44
+#: .\templates\users\email_change.html:57 .\templates\users\profile.html:38
 msgid "change_email"
 msgstr "メールアドレスを変更"
+
+#: .\templates\users\forms\login_form.html:8
+msgid "dont_have_account_yet"
+msgstr "まだアカウントがありませんか？"
+
+#: .\templates\users\forms\login_form.html:8
+msgid "create_it"
+msgstr "作成しましょう！"
+
+#: .\templates\users\forms\login_form.html:11
+msgid "forgot_password"
+msgstr "パスワードを忘れましたか？"
 
 #: .\templates\users\login.html:5
 msgid "authorization"
 msgstr "ログイン"
 
-#: .\templates\users\login.html:12
+#: .\templates\users\login.html:8
 msgid "log_in_to_datanar"
 msgstr "Datanarにログイン！"
 
@@ -1329,11 +1410,11 @@ msgid "logout"
 msgstr "ログアウト"
 
 #: .\templates\users\password_change.html:5
-#: .\templates\users\password_change.html:12
+#: .\templates\users\password_change.html:8
 msgid "password_change"
 msgstr "パスワードの変更"
 
-#: .\templates\users\password_change.html:13 .\templates\users\profile.html:45
+#: .\templates\users\password_change.html:9 .\templates\users\profile.html:50
 msgid "change_password"
 msgstr "パスワードを変更"
 
@@ -1346,14 +1427,14 @@ msgid "your_password_be_success_changed"
 msgstr "あなたのパスワードは正常に変更されました！"
 
 #: .\templates\users\password_reset.html:5
-#: .\templates\users\password_reset.html:12
+#: .\templates\users\password_reset.html:8
 #: .\templates\users\password_reset_confirm.html:5
-#: .\templates\users\password_reset_confirm.html:12
+#: .\templates\users\password_reset_confirm.html:8
 #: .\templates\users\password_reset_done.html:5
 msgid "password_recovery"
 msgstr "パスワードのリカバリー"
 
-#: .\templates\users\password_reset.html:13
+#: .\templates\users\password_reset.html:9
 msgid "recover"
 msgstr "リカバリー"
 
@@ -1365,7 +1446,7 @@ msgstr "パスワードがリカバリーされました"
 msgid "password_reset_completed_success"
 msgstr "パスワードのリセットが正常に完了しました"
 
-#: .\templates\users\password_reset_confirm.html:13
+#: .\templates\users\password_reset_confirm.html:9
 msgid "reset"
 msgstr "リセット"
 
@@ -1373,32 +1454,26 @@ msgstr "リセット"
 msgid "email_instructions_for_password_recover_sent"
 msgstr "パスワードリカバリーの指示が含まれたメールが送信されました"
 
-#: .\templates\users\profile.html:37
+#: .\templates\users\profile.html:23
 msgid "delete_avatar"
 msgstr "アバター削除"
 
-#: .\templates\users\profile.html:42
+#: .\templates\users\profile.html:51
 msgid "save"
 msgstr "保存"
 
-#: .\templates\users\signup.html:12
+#: .\templates\users\signup.html:8
 msgid "greeting"
 msgstr "Datanarへようこそ！"
 
-#: .\templates\users\signup.html:13
+#: .\templates\users\signup.html:9
 msgid "register"
 msgstr "登録"
 
-#: .\users\apps.py:8
+#: .\users\apps.py:10
 msgid "users"
 msgstr "ユーザー"
 
-#: .\users\models.py:9
+#: .\users\models.py:14
 msgid "avatar"
 msgstr "アバター"
-
-msgid "country_from_which_redirect_was_made"
-msgstr "リダイレクトが行われた国。"
-
-msgid "city_from_which_redirect_was_made"
-msgstr "リダイレクトが行われた都市。"

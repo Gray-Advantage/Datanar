@@ -2,7 +2,7 @@ let qrDeleteButtons = document.querySelectorAll(".card-body button[data-bs-targe
 
 qrDeleteButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-      let shortLink = btn.getAttribute("data-bs-short-link");
-      document.getElementById("redirectShortLink").setAttribute("value", shortLink);
+    let shortLink = btn.getAttribute("data-bs-short-link");
+    document.getElementById("redirectShortLink").setAttribute("value", shortLink);
   });
 });

@@ -53,8 +53,8 @@ class RedirectForm(BootstrapFormMixin, forms.ModelForm):
             Redirect.short_link.field.name,
         )
         if not custom_url_value and long_link_value:
-            cleaned_data[Redirect.short_link.field.name] = generate_short_link(
-                long_link_value,
+            cleaned_data[Redirect.short_link.field.name] = (
+                generate_short_link()
             )
         else:
             if "/" in custom_url_value:

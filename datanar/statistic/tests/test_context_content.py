@@ -5,6 +5,8 @@ from http import HTTPStatus
 from django.test import Client, TestCase
 from django.urls import reverse
 
+from redirects.models import Redirect
+
 
 class ContextContentTest(TestCase):
     fixtures = ["fixtures/for_test_data.json"]
@@ -15,11 +17,14 @@ class ContextContentTest(TestCase):
 
         url = reverse("statistic:my_links")
         response = client.get(url)
-
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
+        response_links = response.context["links"].values_list(
+            Redirect.short_link.field.name,
+            flat=True,
+        )
         self.assertQuerySetEqual(
-            response.context["links"],
+            response_links,
             [
                 "short_FFF",
                 "short_EEE",

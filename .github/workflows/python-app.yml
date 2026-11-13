@@ -2,9 +2,9 @@ name: Datanar
 
 on:
   push:
-    branches: [ "main", "dev", "artem", "sergey", "vladimir", "for_merge" ]
+    branches: [ "main", "dev", "artem", "sergey" ]
   pull_request:
-    branches: [ "main", "dev", "artem", "sergey", "vladimir", "for_merge" ]
+    branches: [ "main", "dev", "artem", "sergey", "vladimir" ]
 
 permissions:
   contents: read
@@ -54,7 +54,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
-        python-version: [ "3.10", "3.11", "3.12", "3.13" ]
+        python-version: [ "3.11", "3.12", "3.13", "3.14" ]
     name: django-tests (${{ matrix.os }}, py${{ matrix.python-version }})
     steps:
       - uses: actions/checkout@v4
@@ -79,12 +79,12 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SERVER_PORT }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          # Ключ на сервере ограничен forced command: что бы ни было в script,
+          # выполнится только /usr/local/bin/deploy-datanar (git reset на
+          # origin/main, compose up --build, проверка живости). Сам script
+          # нужен action-у формально.
           script: |
-            cd ~/datanar
-            docker compose down
-            git reset --hard origin/main
-            git pull origin main
-            docker compose up --build -d
-            docker system prune -a -f --volumes
+            true

@@ -2,13 +2,12 @@ from pathlib import Path
 import sys
 
 from decouple import config
-from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-VERSION = "2.6.5"
-API_VERSION = "1.2.0"
+VERSION = "2.6.6"
+API_VERSION = "1.2.1"
 
 SECRET_KEY = config(
     "DATANAR_SECRET_KEY",
@@ -105,7 +104,7 @@ MIDDLEWARE = [
     "tz_detect.middleware.TimezoneMiddleware",
 ]
 
-if settings.DEBUG and not TEST:
+if DEBUG and not TEST:
     INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
     INTERNAL_IPS = ["127.0.0.1"]
@@ -155,7 +154,7 @@ DATABASES = {
 if not USE_FILE_DATABASE:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "ENGINE": "django.db.backends.postgresql",
             "NAME": config("DATANAR_DATABASE_NAME"),
             "USER": config("DATANAR_DATABASE_USER"),
             "PASSWORD": config("DATANAR_DATABASE_PASSWORD"),

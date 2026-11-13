@@ -11,6 +11,7 @@ from django.http import (
     Http404,
     HttpRequest,
     HttpResponse,
+    HttpResponseBase,
     HttpResponseRedirect,
 )
 from django.views.generic import View
@@ -68,9 +69,9 @@ class FormMethodExtender(View):
         request: HttpRequest,
         *args: Any,
         **kwargs: Any,
-    ) -> HttpResponse:
-        method = request.POST.get("_method", None)
-        if method:
+    ) -> "HttpResponseBase":
+        method = request.POST.get("_method", "")
+        if method.upper() in ("DELETE", "PATCH", "PUT"):
             request.method = method
             return super().dispatch(request, *args, **kwargs)
         return super().post(request, *args, **kwargs)
@@ -82,7 +83,7 @@ class StaffUserRequiredMixin(AccessMixin):
         request: HttpRequest,
         *args: Any,
         **kwargs: Any,
-    ) -> HttpResponse:
-        if not self.request.user.is_staff:
+    ) -> "HttpResponseBase":
+        if not request.user.is_staff:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
